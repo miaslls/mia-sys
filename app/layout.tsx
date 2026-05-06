@@ -1,8 +1,21 @@
-import type { Metadata } from 'next';
+import './globals.css';
+import { Inter, Fraunces } from 'next/font/google';
 
-export const metadata: Metadata = {
-  title: 'My App',
-  description: '',
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
+});
+
+export const metadata = {
+  title: 'MiaSys Design System',
+  description: 'Botanical Engineering for the Modern Web',
+  // icons: 'TODO:'
 };
 
 export default function RootLayout({
@@ -12,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
