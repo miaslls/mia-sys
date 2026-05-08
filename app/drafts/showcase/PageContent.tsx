@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import WednesdayImage from '../../../assets/img/wednesday.jpg';
+import WednesdayImage from '@/assets/img/wednesday.jpg';
 import {
   Leaf,
   Sprout,
