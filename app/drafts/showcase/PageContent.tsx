@@ -22,7 +22,7 @@ import {
  * - Custom SVG assets for botanical feel
  * - Style Guide section based on the design spec
  */
-export default function ShowcasePage() {
+export default function ShowcasePageContent() {
   const [theme, setTheme] = useState('dark'); // 'dark' (Midnight) or 'light' (Paper)
 
   const toggleTheme = () =>
