@@ -62,7 +62,7 @@ export default function ShowcasePageContent() {
 
   return (
     <div
-      className={`min-h-screen overflow-x-hidden p-6 transition-colors duration-500 md:p-12 ${isDark ? 'bg-[#090D10] text-[#F7F6F2]' : 'bg-[#E9E7E0] text-[#111416]'}`}
+      className={`min-h-screen overflow-x-hidden px-4 py-5 transition-colors duration-500 sm:p-6 md:p-12 ${isDark ? 'bg-[#090D10] text-[#F7F6F2]' : 'bg-[#E9E7E0] text-[#111416]'}`}
     >
       <style>
         {`
@@ -81,31 +81,31 @@ export default function ShowcasePageContent() {
       </style>
 
       {/* Main Container */}
-      <div className='max-w-7xl mx-auto space-y-16'>
+      <div className='mx-auto max-w-7xl space-y-8 md:space-y-16'>
         {/* Top Header Section */}
-        <header className='flex flex-col md:flex-row items-start md:items-center justify-between gap-8'>
-          <div className='flex items-center gap-6'>
+        <header className='flex flex-col items-start justify-between gap-5 md:flex-row md:items-center md:gap-8'>
+          <div className='flex items-center gap-4 sm:gap-6'>
             <div
-              className={`grid h-16 w-16 shrink-0 place-items-center rounded-[26px] border shadow-[0_0_32px_rgba(166,226,46,0.12)] transition-all ${isDark ? 'border-[#A6E22E]/40 bg-[#A6E22E]/5 text-[#F7F6F2]' : 'border-[#739E1C]/40 bg-[#F7F6F2] text-[#516F12]'}`}
+              className={`grid h-12 w-12 shrink-0 place-items-center rounded-[18px] border shadow-[0_0_32px_rgba(166,226,46,0.12)] transition-all sm:h-16 sm:w-16 sm:rounded-[26px] ${isDark ? 'border-[#A6E22E]/40 bg-[#A6E22E]/5 text-[#F7F6F2]' : 'border-[#739E1C]/40 bg-[#F7F6F2] text-[#516F12]'}`}
             >
-              <Leaf size={32} strokeWidth={1.5} />
+              <Leaf className='h-6 w-6 sm:h-8 sm:w-8' strokeWidth={1.5} />
             </div>
             <div>
               <h1
-                className={`text-4xl font-display tracking-tight transition-colors ${isDark ? 'text-white' : 'text-slate-900'}`}
+                className={`font-display text-3xl tracking-tight transition-colors sm:text-4xl ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
                 MiaSys
               </h1>
               <p
-                className={`text-[10px] tracking-[0.2em] font-semibold uppercase mt-1 transition-colors ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
+                className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] transition-colors sm:text-[10px] sm:tracking-[0.2em] ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
               >
                 Botanical Engineering{' '}
-                <span className='text-lime-500 ml-2'>v 0.1.0</span>
+                <span className='ml-1 text-lime-500 sm:ml-2'>v 0.1.0</span>
               </p>
             </div>
           </div>
 
-          <div className='flex items-center gap-6'>
+          <div className='flex w-full items-center justify-between gap-4 md:w-auto md:justify-end md:gap-6'>
             <div className='hidden text-right md:block'>
               <p className='text-sm font-semibold leading-none text-lime-500'>
                 Organic Logic Interface
@@ -117,7 +117,7 @@ export default function ShowcasePageContent() {
               </p>
             </div>
             <div
-              className={`h-10 w-px ${isDark ? 'bg-zinc-800' : 'bg-slate-300'}`}
+              className={`hidden h-10 w-px md:block ${isDark ? 'bg-zinc-800' : 'bg-slate-300'}`}
             />
             <button
               type='button'
@@ -132,11 +132,11 @@ export default function ShowcasePageContent() {
 
         {/* Main Interface Card (The Hero Component) */}
         <div
-          className={`relative min-h-[600px] w-full overflow-hidden rounded-[48px] border shadow-2xl transition-colors duration-500 ${isDark ? 'border-white/20 bg-[#0B0F12] shadow-black/50' : 'border-white/80 bg-[#F7F6F2] shadow-[#867B68]/20'}`}
+          className={`relative w-full overflow-hidden rounded-[28px] border shadow-2xl transition-colors duration-500 sm:rounded-[36px] md:min-h-[600px] md:rounded-[48px] ${isDark ? 'border-white/20 bg-[#0B0F12] shadow-black/50' : 'border-white/80 bg-[#F7F6F2] shadow-[#867B68]/20'}`}
         >
           {/* Subtle Background Elements */}
           <div
-            className={`absolute top-1/2 right-10 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px] opacity-20 ${isDark ? 'bg-lime-900' : 'bg-lime-200'}`}
+            className={`absolute right-0 top-24 h-64 w-64 rounded-full opacity-20 blur-[80px] md:right-10 md:top-1/2 md:h-[400px] md:w-[400px] md:-translate-y-1/2 md:blur-[100px] ${isDark ? 'bg-lime-900' : 'bg-lime-200'}`}
           />
 
           <div className='pointer-events-auto absolute bottom-10 right-8 top-10 z-10 hidden w-[42%] md:block'>
@@ -162,75 +162,105 @@ export default function ShowcasePageContent() {
             </div>
           </div>
 
-          <div className='relative z-10 flex min-h-[600px] p-10 md:p-16'>
+          <div className='relative z-10 flex flex-col gap-8 p-5 sm:p-8 md:min-h-[600px] md:flex-row md:p-16'>
             {/* Sidebar UI Component */}
             <aside
-              className={`flex flex-col items-center gap-8 py-8 px-4 rounded-[32px] self-center ${isDark ? 'glass-dark' : 'glass-light'}`}
+              className={`flex w-full items-center justify-between gap-3 self-center rounded-[24px] px-3 py-3 sm:w-auto sm:justify-center sm:gap-5 md:flex-col md:gap-8 md:rounded-[32px] md:px-4 md:py-8 ${isDark ? 'glass-dark' : 'glass-light'}`}
             >
               <button
-                className={`p-4 rounded-2xl transition-all ${isDark ? 'bg-lime-500/10 text-lime-400 ring-1 ring-lime-500/50 glow-lime' : 'bg-white shadow-sm text-lime-700'}`}
+                type='button'
+                aria-label='Show growth dashboard'
+                className={`rounded-2xl p-3 transition-all sm:p-4 ${isDark ? 'bg-lime-500/10 text-lime-400 ring-1 ring-lime-500/50 glow-lime' : 'bg-white shadow-sm text-lime-700'}`}
               >
-                <Leaf size={24} />
+                <Leaf className='h-5 w-5 sm:h-6 sm:w-6' />
               </button>
               <button
-                className={`p-4 rounded-2xl transition-all opacity-40 hover:opacity-100 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                type='button'
+                aria-label='Show analytics'
+                className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <BarChart3 size={24} />
+                <BarChart3 className='h-5 w-5 sm:h-6 sm:w-6' />
               </button>
               <button
-                className={`p-4 rounded-2xl transition-all opacity-40 hover:opacity-100 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                type='button'
+                aria-label='Show plant systems'
+                className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <Sprout size={24} />
+                <Sprout className='h-5 w-5 sm:h-6 sm:w-6' />
               </button>
               <button
-                className={`p-4 rounded-2xl transition-all opacity-40 hover:opacity-100 ${isDark ? 'text-white' : 'text-slate-900'}`}
+                type='button'
+                aria-label='Show settings'
+                className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <Settings size={24} />
+                <Settings className='h-5 w-5 sm:h-6 sm:w-6' />
               </button>
             </aside>
 
             {/* Content Area */}
-            <main className='ml-16 flex max-w-xl flex-col justify-between self-stretch'>
-              <div className='space-y-6'>
+            <main className='flex max-w-xl flex-col justify-between gap-8 self-stretch md:ml-16'>
+              <div className='space-y-5 md:space-y-6'>
                 <span
-                  className={`text-[10px] font-bold uppercase tracking-[0.3em] ${isDark ? 'text-lime-500' : 'text-lime-700'}`}
+                  className={`text-[10px] font-bold uppercase tracking-[0.24em] sm:tracking-[0.3em] ${isDark ? 'text-lime-500' : 'text-lime-700'}`}
                 >
                   Organic Logic
                 </span>
                 <h2
-                  className={`text-6xl md:text-7xl font-display leading-[1.1] transition-colors ${isDark ? 'text-white' : 'text-slate-900'}`}
+                  className={`font-display text-5xl leading-[1.02] tracking-normal transition-colors sm:text-6xl md:text-7xl md:leading-[1.1] ${isDark ? 'text-white' : 'text-slate-900'}`}
                 >
                   Engineering life.
                   <br />
                   <span className='italic font-normal'>With intention.</span>
                 </h2>
                 <p
-                  className={`text-lg leading-relaxed max-w-sm transition-colors ${isDark ? 'text-zinc-400' : 'text-slate-600'}`}
+                  className={`max-w-sm text-base leading-relaxed transition-colors sm:text-lg ${isDark ? 'text-zinc-400' : 'text-slate-600'}`}
                 >
                   MiaSys unites botanical intelligence, automation, and
                   ecological insight in a living system that grows with you.
                 </p>
               </div>
 
-              <div className='flex items-center gap-4'>
-                <button className='bg-[#A6E22E] hover:bg-[#95cc29] text-black font-semibold px-8 py-4 rounded-full flex items-center gap-4 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-lime-500/20'>
+              <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'>
+                <button
+                  type='button'
+                  className='flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#A6E22E] px-6 py-4 font-semibold text-black shadow-lg shadow-lime-500/20 transition-all hover:scale-105 hover:bg-[#95cc29] active:scale-95 sm:px-8'
+                >
                   Explore the Studio <ArrowUpRight size={20} />
                 </button>
                 <button
-                  className={`px-8 py-4 rounded-full font-semibold border transition-all flex items-center gap-4 hover:scale-105 active:scale-95 ${isDark ? 'border-zinc-800 text-zinc-300 hover:bg-zinc-900' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                  type='button'
+                  className={`flex min-h-14 items-center justify-center gap-3 rounded-full border px-6 py-4 font-semibold transition-all hover:scale-105 active:scale-95 sm:px-8 ${isDark ? 'border-zinc-800 text-zinc-300 hover:bg-zinc-900' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                 >
                   View Protocols <ArrowUpRight size={20} />
                 </button>
               </div>
             </main>
+
+            <div className='grid grid-cols-3 gap-3 md:hidden'>
+              {stackedImages.map((image, index) => (
+                <div
+                  key={image.alt}
+                  className={`relative aspect-[4/5] overflow-hidden rounded-[20px] border shadow-xl ${isDark ? 'border-white/15 bg-white/[0.04] shadow-black/40' : 'border-white/80 bg-white/75 shadow-[#867B68]/20'}`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes='(max-width: 767px) 30vw'
+                    className='object-cover'
+                    priority={index === 1}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Style Guide / Footer Component */}
         <section
-          className={`rounded-[28px] border p-10 transition-colors duration-500 ${isDark ? 'border-white/20 bg-[#0B0F12]' : 'border-black/10 bg-[#F7F6F2]'}`}
+          className={`rounded-[24px] border p-5 transition-colors duration-500 sm:p-8 md:rounded-[28px] md:p-10 ${isDark ? 'border-white/20 bg-[#0B0F12]' : 'border-black/10 bg-[#F7F6F2]'}`}
         >
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
+          <div className='grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12'>
             {/* Color System */}
             <div className='space-y-6'>
               <div className='flex items-center gap-3'>
@@ -275,7 +305,9 @@ export default function ShowcasePageContent() {
             </div>
 
             {/* Typography */}
-            <div className='space-y-6 border-l border-zinc-800 pl-8'>
+            <div
+              className={`space-y-6 border-t pt-8 md:border-l md:border-t-0 md:pl-8 md:pt-0 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
+            >
               <div className='flex items-center gap-3'>
                 <span
                   className={`text-[10px] font-bold py-1 px-2 rounded ${isDark ? 'bg-zinc-800 text-zinc-400' : 'bg-slate-100 text-slate-500'}`}
@@ -327,7 +359,9 @@ export default function ShowcasePageContent() {
             </div>
 
             {/* Components */}
-            <div className='space-y-6 border-l border-zinc-800 pl-8'>
+            <div
+              className={`space-y-6 border-t pt-8 md:border-l md:border-t-0 md:pl-8 md:pt-0 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
+            >
               <div className='flex items-center gap-3'>
                 <span
                   className={`text-[10px] font-bold py-1 px-2 rounded ${isDark ? 'bg-zinc-800 text-zinc-400' : 'bg-slate-100 text-slate-500'}`}
@@ -362,12 +396,17 @@ export default function ShowcasePageContent() {
                   <Settings size={18} />
                 </div>
               </div>
-              <div className='flex items-center gap-4'>
-                <button className='bg-lime-500 h-12 w-32 rounded-full flex items-center justify-center text-black font-bold text-[10px] uppercase tracking-widest gap-2'>
+              <div className='flex flex-wrap items-center gap-4'>
+                <button
+                  type='button'
+                  className='flex h-12 w-32 items-center justify-center gap-2 rounded-full bg-lime-500 text-[10px] font-bold uppercase tracking-widest text-black'
+                >
                   Primary <ArrowUpRight size={14} />
                 </button>
                 <button
-                  className={`h-12 w-12 rounded-full flex items-center justify-center border ${isDark ? 'border-zinc-800 text-white' : 'bg-slate-100 border-slate-200 text-slate-900'}`}
+                  type='button'
+                  aria-label='Open component detail'
+                  className={`flex h-12 w-12 items-center justify-center rounded-full border ${isDark ? 'border-zinc-800 text-white' : 'border-slate-200 bg-slate-100 text-slate-900'}`}
                 >
                   <ArrowUpRight size={16} />
                 </button>
@@ -375,8 +414,10 @@ export default function ShowcasePageContent() {
             </div>
           </div>
 
-          <div className='mt-12 pt-8 border-t border-zinc-800 flex justify-between items-center opacity-50'>
-            <div className='flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-zinc-400'>
+          <div
+            className={`mt-10 flex flex-col gap-4 border-t pt-6 opacity-60 sm:flex-row sm:items-center sm:justify-between md:mt-12 md:pt-8 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
+          >
+            <div className='flex max-w-sm items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-zinc-400 sm:tracking-[0.2em]'>
               <Leaf size={12} className='text-lime-500' />
               Organic by logic.{' '}
               <span className='text-lime-500 font-bold'>
