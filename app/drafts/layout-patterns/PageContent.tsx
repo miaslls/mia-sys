@@ -48,6 +48,14 @@ export default function LayoutPatternsPageContent() {
     ? 'border-white/10 bg-white/[0.03]'
     : 'border-black/10 bg-[#F7F6F2]';
 
+  const stackedCardClass = isDark
+    ? 'border-white/10 bg-[#202326] shadow-[0_18px_42px_rgba(0,0,0,0.28)]'
+    : insetClass;
+
+  const stackedBackCardClass = isDark
+    ? 'border-white/10 bg-[#15191D] shadow-[0_12px_28px_rgba(0,0,0,0.24)]'
+    : insetClass;
+
   const mutedTextClass = isDark ? 'text-zinc-500' : 'text-slate-500';
   const subtleTextClass = isDark ? 'text-zinc-400' : 'text-slate-600';
   const dividerClass = isDark ? 'border-white/10' : 'border-black/10';
@@ -391,15 +399,15 @@ export default function LayoutPatternsPageContent() {
                 {[0, 1, 2].map((offset) => (
                   <div
                     key={offset}
-                    className={`absolute h-28 w-[88%] rounded-2xl border ${insetClass}`}
+                    className={`absolute h-28 w-[88%] rounded-2xl border ${stackedBackCardClass}`}
                     style={{
                       right: `${offset * 14}px`,
                       top: `${offset * 10}px`,
-                      opacity: 1 - offset * 0.16,
+                      opacity: isDark ? 1 : 1 - offset * 0.16,
                     }}
                   />
                 ))}
-                <div className={`absolute left-0 top-8 w-[84%] rounded-2xl border p-5 ${insetClass}`}>
+                <div className={`absolute left-0 top-8 w-[84%] rounded-2xl border p-5 ${stackedCardClass}`}>
                   <div className='flex items-start gap-4'>
                     <div className='grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-lime-500/30 text-lime-500'>
                       <Leaf size={16} />
