@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 
 /**
- * MiaSys Design Philosophy Article v1.5.2
+ * MiaSys Design Philosophy Article v0.1.0
  * Features:
  * - Persistent Sidebar Navigation
  * - Rich Editorial Layout
@@ -92,7 +92,7 @@ export default function ArticlePageContent() {
             <p className='text-[10px] tracking-[0.2em] font-bold text-lime-500 uppercase'>
               Botanical Engineering
             </p>
-            <p className='text-[9px] text-zinc-500 font-bold'>v 1.5.2</p>
+            <p className='text-[9px] text-zinc-500 font-bold'>v 0.1.0</p>
           </div>
         </div>
 

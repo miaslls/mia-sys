@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 /**
- * MiaSys Component System Spec v1.5.2
+ * MiaSys Component System Spec v0.1.0
  * Features:
  * - Adaptive Theme Support (Midnight / Paper)
  * - Interactive UI Primitives
@@ -87,7 +87,7 @@ export default function ComponentsPageContent() {
                   className={`text-xs tracking-[0.4em] font-bold uppercase mt-1 transition-colors ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
                 >
                   Component System{' '}
-                  <span className='text-lime-500 ml-2'>v 1.5.2</span>
+                  <span className='text-lime-500 ml-2'>v 0.1.0</span>
                 </p>
               </div>
             </div>

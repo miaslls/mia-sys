@@ -81,7 +81,7 @@ export default function ShowcasePageContent() {
                 className={`text-[10px] tracking-[0.2em] font-semibold uppercase mt-1 transition-colors ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
               >
                 Botanical Engineering{' '}
-                <span className='text-lime-500 ml-2'>v 1.5.2</span>
+                <span className='text-lime-500 ml-2'>v 0.1.0</span>
               </p>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function ShowcasePageContent() {
                   <span
                     className={`text-[10px] uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
                   >
-                    v 1.5.2
+                    v 0.1.0
                   </span>
                 </div>
 

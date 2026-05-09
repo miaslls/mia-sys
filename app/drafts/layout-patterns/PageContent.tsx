@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 /**
- * MiaSys Layout & Patterns v1.5.2
+ * MiaSys Layout & Patterns v0.1.0
  * Documentation for:
  * 07. Spacing & Layout
  * 08. Cards & Lists
@@ -72,7 +72,7 @@ export default function LayoutPatternsPageContent() {
                   className={`text-xs tracking-[0.4em] font-bold uppercase mt-1 ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
                 >
                   Layout & Patterns{' '}
-                  <span className='text-lime-500 ml-2'>v 1.5.2</span>
+                  <span className='text-lime-500 ml-2'>v 0.1.0</span>
                 </p>
               </div>
             </div>
