@@ -330,7 +330,7 @@ export default function LayoutPatternsPageContent() {
           </div>
 
           <div
-            className={`grid grid-cols-1 gap-6 border-b pb-7 xl:grid-cols-[1.2fr_1fr_1.15fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
+            className={`grid grid-cols-1 gap-6 border-b pb-7 xl:grid-cols-[2fr_1.15fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
           >
             <div className='space-y-5 xl:pr-6'>
               <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
@@ -379,24 +379,6 @@ export default function LayoutPatternsPageContent() {
                       <span className='w-28'>{text}</span>
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
-
-            <div className='space-y-5 xl:px-6'>
-              <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
-                Border & Shadow
-              </p>
-              <div className='grid grid-cols-2 gap-5'>
-                <div className='space-y-3'>
-                  <p className={`text-[10px] ${mutedTextClass}`}>Resting</p>
-                  <div className={`h-32 rounded-2xl border ${insetClass}`} />
-                </div>
-                <div className='space-y-3'>
-                  <p className={`text-[10px] ${mutedTextClass}`}>Hover</p>
-                  <div
-                    className={`h-32 rounded-2xl border border-lime-500/40 shadow-[0_0_38px_rgba(166,226,46,0.30)] ${insetClass}`}
-                  />
                 </div>
               </div>
             </div>
@@ -604,23 +586,19 @@ export default function LayoutPatternsPageContent() {
 
             <div className='space-y-5 xl:pl-6'>
               <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
-                Reusable Patterns
+                Border & Shadow
               </p>
-              <div className='grid grid-cols-5 gap-3'>
-                {[
-                  { label: 'Metrics', icon: BarChart3 },
-                  { label: 'Content', icon: FileText },
-                  { label: 'Activity', icon: Leaf },
-                  { label: 'Tables', icon: LayoutGrid },
-                  { label: 'Timeline', icon: Settings },
-                ].map(({ label, icon: Icon }) => (
-                  <div key={label} className='space-y-3 text-center'>
-                    <div className={`grid aspect-square place-items-center rounded-2xl border ${insetClass}`}>
-                      <Icon className='h-6 w-6 text-lime-500' strokeWidth={1.5} />
-                    </div>
-                    <p className={`text-[10px] ${mutedTextClass}`}>{label}</p>
-                  </div>
-                ))}
+              <div className='grid grid-cols-2 gap-5'>
+                <div className='space-y-3'>
+                  <p className={`text-[10px] ${mutedTextClass}`}>Resting</p>
+                  <div className={`h-32 rounded-2xl border ${insetClass}`} />
+                </div>
+                <div className='space-y-3'>
+                  <p className={`text-[10px] ${mutedTextClass}`}>Hover</p>
+                  <div
+                    className={`h-32 rounded-2xl border border-lime-500/40 shadow-[0_0_38px_rgba(166,226,46,0.30)] ${insetClass}`}
+                  />
+                </div>
               </div>
             </div>
           </div>
