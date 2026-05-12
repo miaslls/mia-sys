@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+.font-display {
+  font-family: var(--font-cormorant-garamond), serif;
+}
