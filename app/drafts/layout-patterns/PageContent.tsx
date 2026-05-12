@@ -22,6 +22,7 @@ import {
 import EvaImage from '@/assets/img/eva.jpg';
 import MagaliImage from '@/assets/img/magali.jpg';
 import MarthaImage from '@/assets/img/martha.jpg';
+import LeafLogo from '@/assets/logo/leaf.svg';
 
 /**
  * MiaSys Layout & Patterns v0.1.0
@@ -104,7 +105,20 @@ export default function LayoutPatternsPageContent() {
             <div
               className={`grid h-12 w-12 shrink-0 place-items-center rounded-[18px] border shadow-[0_0_32px_rgba(166,226,46,0.12)] transition-all sm:h-16 sm:w-16 sm:rounded-[26px] ${isDark ? 'border-[#A6E22E]/40 bg-[#A6E22E]/5 text-[#F7F6F2]' : 'border-[#739E1C]/40 bg-[#F7F6F2] text-[#516F12]'}`}
             >
-              <Leaf className='h-6 w-6 sm:h-8 sm:w-8' strokeWidth={1.5} />
+              <span
+                aria-hidden='true'
+                className='h-6 w-6 bg-current sm:h-8 sm:w-8'
+                style={{
+                  maskImage: `url(${LeafLogo.src})`,
+                  maskPosition: 'center',
+                  maskRepeat: 'no-repeat',
+                  maskSize: 'contain',
+                  WebkitMaskImage: `url(${LeafLogo.src})`,
+                  WebkitMaskPosition: 'center',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskSize: 'contain',
+                }}
+              />
             </div>
             <div>
               <h1

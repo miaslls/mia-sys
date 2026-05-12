@@ -7,6 +7,7 @@ import EvaImage from '@/assets/img/eva.jpg';
 import MagaliImage from '@/assets/img/magali.jpg';
 import MarthaImage from '@/assets/img/martha.jpg';
 import PriscillaImage from '@/assets/img/priscilla.jpg';
+import MiaSysLogo from '@/assets/logo/logo.svg';
 import {
   Leaf,
   Sprout,
@@ -172,28 +173,23 @@ function Sidebar({ isDark }: { isDark: boolean }) {
           : 'border-black/10 bg-[#F8F6EF]'
       }`}
     >
-      <div className='mb-14 flex items-center gap-4'>
-        <div className='flex h-11 w-11 items-center justify-center rounded-xl border border-lime-400/35 bg-lime-400/10 text-lime-400 shadow-[0_0_32px_rgba(166,226,46,0.14)]'>
-          <Leaf size={25} strokeWidth={1.5} />
-        </div>
-        <div>
-          <h2
-            className={`font-display text-3xl leading-none ${
-              isDark ? 'text-white' : 'text-slate-950'
-            }`}
-          >
-            MiaSys
-          </h2>
-          <p
-            className={`mt-3 text-[10px] font-semibold uppercase tracking-[0.22em] ${
-              isDark ? 'text-zinc-400' : 'text-slate-500'
-            }`}
-          >
-            Botanical Engineering
-          </p>
-          <p className='mt-2 text-[10px] font-semibold text-lime-400'>v1.5.2</p>
-        </div>
-      </div>
+      <div
+        aria-label='MiaSys Botanical Engineering'
+        className={`mb-14 h-[82px] w-[158px] bg-current ${
+          isDark ? 'text-white' : 'text-slate-950'
+        }`}
+        role='img'
+        style={{
+          maskImage: `url(${MiaSysLogo.src})`,
+          maskPosition: 'left center',
+          maskRepeat: 'no-repeat',
+          maskSize: 'contain',
+          WebkitMaskImage: `url(${MiaSysLogo.src})`,
+          WebkitMaskPosition: 'left center',
+          WebkitMaskRepeat: 'no-repeat',
+          WebkitMaskSize: 'contain',
+        }}
+      />
 
       <nav className='flex-1 space-y-4'>
         {menuItems.map((item) => (
