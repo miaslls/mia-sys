@@ -425,10 +425,8 @@ export default function LayoutPatternsPageContent() {
             </div>
           </div>
 
-          <div
-            className={`grid grid-cols-1 gap-6 border-b py-7 xl:grid-cols-[1.55fr_1.05fr_0.65fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
-          >
-            <div className='space-y-5 xl:pr-6'>
+          <div className={`border-b py-7 ${dividerClass}`}>
+            <div className='space-y-5'>
               <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
                 Card Examples
               </p>
@@ -480,72 +478,94 @@ export default function LayoutPatternsPageContent() {
               </div>
             </div>
 
-            <div className='space-y-5 xl:px-6'>
-              <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
-                List Item Examples
-              </p>
-              <div className={`overflow-hidden rounded-2xl border ${insetClass}`}>
-                {[
-                  ['Lumiere Protocol', 'Growth - 12 steps', 'Active', botanicalImages[0]],
-                  ['Soil Balance', 'Nutrition - 8 steps', 'Draft', botanicalImages[1]],
-                  ['Bloom Phase', 'Flowering - 10 steps', 'Completed', botanicalImages[2]],
-                ].map(([title, meta, status, image]) => (
-                  <div
-                    key={title as string}
-                    className={`flex items-center gap-3 border-b p-3 last:border-b-0 ${dividerClass}`}
-                  >
-                    <div className='relative h-10 w-10 shrink-0 overflow-hidden rounded-lg'>
-                      <Image
-                        src={(image as (typeof botanicalImages)[number]).src}
-                        alt={(image as (typeof botanicalImages)[number]).alt}
-                        fill
-                        sizes='40px'
-                        className='object-cover'
-                      />
+            <div
+              className={`mt-6 grid grid-cols-1 gap-6 border-t pt-6 xl:grid-cols-[1.25fr_0.8fr_1fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
+            >
+              <div className='space-y-5 xl:pr-6'>
+                <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
+                  List Item Examples
+                </p>
+                <div className={`overflow-hidden rounded-2xl border ${insetClass}`}>
+                  {[
+                    ['Lumiere Protocol', 'Growth - 12 steps', 'Active', botanicalImages[0]],
+                    ['Soil Balance', 'Nutrition - 8 steps', 'Draft', botanicalImages[1]],
+                    ['Bloom Phase', 'Flowering - 10 steps', 'Completed', botanicalImages[2]],
+                  ].map(([title, meta, status, image]) => (
+                    <div
+                      key={title as string}
+                      className={`flex items-center gap-3 border-b p-3 last:border-b-0 ${dividerClass}`}
+                    >
+                      <div className='relative h-10 w-10 shrink-0 overflow-hidden rounded-lg'>
+                        <Image
+                          src={(image as (typeof botanicalImages)[number]).src}
+                          alt={(image as (typeof botanicalImages)[number]).alt}
+                          fill
+                          sizes='40px'
+                          className='object-cover'
+                        />
+                      </div>
+                      <div className='min-w-0 flex-1'>
+                        <p className='truncate text-xs font-semibold'>{title as string}</p>
+                        <p className={`truncate text-[10px] ${mutedTextClass}`}>{meta as string}</p>
+                      </div>
+                      <span className={`flex items-center gap-2 text-[10px] ${mutedTextClass}`}>
+                        <span className='h-1.5 w-1.5 rounded-full bg-lime-500' />
+                        {status as string}
+                      </span>
+                      <ArrowUpRight size={14} className='text-lime-500' />
                     </div>
-                    <div className='min-w-0 flex-1'>
-                      <p className='truncate text-xs font-semibold'>{title as string}</p>
-                      <p className={`truncate text-[10px] ${mutedTextClass}`}>{meta as string}</p>
-                    </div>
-                    <span className={`flex items-center gap-2 text-[10px] ${mutedTextClass}`}>
-                      <span className='h-1.5 w-1.5 rounded-full bg-lime-500' />
-                      {status as string}
-                    </span>
-                    <ArrowUpRight size={14} className='text-lime-500' />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className='space-y-5 xl:pl-6'>
-              <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
-                Compact List Item
-              </p>
-              <div className={`overflow-hidden rounded-2xl border ${insetClass}`}>
-                {[
-                  { label: 'Environment', icon: Database },
-                  { label: 'Irrigation', icon: Sprout },
-                  { label: 'Lighting', icon: Sun },
-                  { label: 'Nutrition', icon: Leaf },
-                  { label: 'Diagnostics', icon: Settings },
-                ].map(({ label, icon: Icon }) => (
-                  <div
-                    key={label}
-                    className={`flex items-center justify-between border-b px-4 py-3 last:border-b-0 ${dividerClass}`}
-                  >
-                    <span className={`flex items-center gap-3 text-[10px] ${mutedTextClass}`}>
-                      <Icon className='h-4 w-4 text-lime-500' />
-                      {label}
-                    </span>
-                    <ArrowUpRight size={12} className='text-lime-500' />
+              <div className='space-y-5 xl:px-6'>
+                <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
+                  Compact List Item
+                </p>
+                <div className={`overflow-hidden rounded-2xl border ${insetClass}`}>
+                  {[
+                    { label: 'Environment', icon: Database },
+                    { label: 'Irrigation', icon: Sprout },
+                    { label: 'Lighting', icon: Sun },
+                    { label: 'Nutrition', icon: Leaf },
+                    { label: 'Diagnostics', icon: Settings },
+                  ].map(({ label, icon: Icon }) => (
+                    <div
+                      key={label}
+                      className={`flex items-center justify-between border-b px-4 py-3 last:border-b-0 ${dividerClass}`}
+                    >
+                      <span className={`flex items-center gap-3 text-[10px] ${mutedTextClass}`}>
+                        <Icon className='h-4 w-4 text-lime-500' />
+                        {label}
+                      </span>
+                      <ArrowUpRight size={12} className='text-lime-500' />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className='space-y-5 xl:pl-6'>
+                <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
+                  Border & Shadow
+                </p>
+                <div className='grid grid-cols-2 gap-5'>
+                  <div className='space-y-3'>
+                    <p className={`text-[10px] ${mutedTextClass}`}>Resting</p>
+                    <div className={`h-32 rounded-2xl border ${insetClass}`} />
                   </div>
-                ))}
+                  <div className='space-y-3'>
+                    <p className={`text-[10px] ${mutedTextClass}`}>Hover</p>
+                    <div
+                      className={`h-32 rounded-2xl border border-lime-500/40 shadow-[0_0_38px_rgba(166,226,46,0.30)] ${insetClass}`}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div
-            className={`grid grid-cols-1 gap-6 pt-7 xl:grid-cols-[1.05fr_0.95fr_1fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
+            className={`grid grid-cols-1 gap-6 pt-7 xl:grid-cols-[1.05fr_0.95fr] xl:divide-x ${dividerClass} xl:divide-white/10`}
           >
             <div className='space-y-5 xl:pr-6'>
               <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
@@ -570,7 +590,7 @@ export default function LayoutPatternsPageContent() {
               </div>
             </div>
 
-            <div className='space-y-5 xl:px-6'>
+            <div className='space-y-5 xl:pl-6'>
               <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
                 Spacing Inside Card
               </p>
@@ -589,24 +609,6 @@ export default function LayoutPatternsPageContent() {
                 <span className='absolute left-4 top-1 text-[9px] text-lime-500'>24px</span>
                 <span className='absolute right-4 top-1 text-[9px] text-lime-500'>24px</span>
                 <span className='absolute bottom-2 left-1/2 text-[9px] text-lime-500'>16px</span>
-              </div>
-            </div>
-
-            <div className='space-y-5 xl:pl-6'>
-              <p className={`text-[10px] uppercase tracking-widest ${mutedTextClass}`}>
-                Border & Shadow
-              </p>
-              <div className='grid grid-cols-2 gap-5'>
-                <div className='space-y-3'>
-                  <p className={`text-[10px] ${mutedTextClass}`}>Resting</p>
-                  <div className={`h-32 rounded-2xl border ${insetClass}`} />
-                </div>
-                <div className='space-y-3'>
-                  <p className={`text-[10px] ${mutedTextClass}`}>Hover</p>
-                  <div
-                    className={`h-32 rounded-2xl border border-lime-500/40 shadow-[0_0_38px_rgba(166,226,46,0.30)] ${insetClass}`}
-                  />
-                </div>
               </div>
             </div>
           </div>
