@@ -2,15 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import {
-  Leaf,
-  Sprout,
-  BarChart3,
-  Settings,
-  ArrowUpRight,
-  Sun,
-  Moon,
-} from 'lucide-react';
+import { Leaf, Sprout, BarChart3, Settings, ArrowUpRight, Sun, Moon } from 'lucide-react';
 
 import EvaImage from '@/assets/img/eva.jpg';
 import MagaliImage from '@/assets/img/magali.jpg';
@@ -46,8 +38,7 @@ const stackedImages = [
 export default function ShowcasePageContent() {
   const [theme, setTheme] = useState('dark'); // 'dark' (Midnight) or 'light' (Paper)
 
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   // Design Tokens based on the provided images
   const colors = {
@@ -82,16 +73,16 @@ export default function ShowcasePageContent() {
       </style>
 
       {/* Main Container */}
-      <div className='mx-auto max-w-7xl space-y-8 md:space-y-16'>
+      <div className="mx-auto max-w-7xl space-y-8 md:space-y-16">
         {/* Top Header Section */}
-        <header className='flex flex-col items-start justify-between gap-5 md:flex-row md:items-center md:gap-8'>
-          <div className='flex items-center gap-4 sm:gap-6'>
+        <header className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-center md:gap-8">
+          <div className="flex items-center gap-4 sm:gap-6">
             <div
               className={`grid h-12 w-12 shrink-0 place-items-center rounded-[18px] border shadow-[0_0_32px_rgba(166,226,46,0.12)] transition-all sm:h-16 sm:w-16 sm:rounded-[26px] ${isDark ? 'border-[#A6E22E]/40 bg-[#A6E22E]/5 text-[#F7F6F2]' : 'border-[#739E1C]/40 bg-[#F7F6F2] text-[#516F12]'}`}
             >
               <span
-                aria-hidden='true'
-                className='h-6 w-6 bg-current sm:h-8 sm:w-8'
+                aria-hidden="true"
+                className="h-6 w-6 bg-current sm:h-8 sm:w-8"
                 style={{
                   maskImage: `url(${LeafLogo.src})`,
                   maskPosition: 'center',
@@ -113,15 +104,14 @@ export default function ShowcasePageContent() {
               <p
                 className={`mt-1 text-[9px] font-semibold uppercase tracking-[0.16em] transition-colors sm:text-[10px] sm:tracking-[0.2em] ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
               >
-                Botanical Engineering{' '}
-                <span className='ml-1 text-lime-500 sm:ml-2'>v 0.1.0</span>
+                Botanical Engineering <span className="ml-1 text-lime-500 sm:ml-2">v 0.1.0</span>
               </p>
             </div>
           </div>
 
-          <div className='flex w-full items-center justify-between gap-4 md:w-auto md:justify-end md:gap-6'>
-            <div className='hidden text-right md:block'>
-              <p className='text-sm font-semibold leading-none text-lime-500'>
+          <div className="flex w-full items-center justify-between gap-4 md:w-auto md:justify-end md:gap-6">
+            <div className="hidden text-right md:block">
+              <p className="text-sm font-semibold leading-none text-lime-500">
                 Organic Logic Interface
               </p>
               <p
@@ -134,8 +124,8 @@ export default function ShowcasePageContent() {
               className={`hidden h-10 w-px md:block ${isDark ? 'bg-zinc-800' : 'bg-slate-300'}`}
             />
             <button
-              type='button'
-              aria-label='Toggle color theme'
+              type="button"
+              aria-label="Toggle color theme"
               className={`grid h-9 w-9 place-items-center rounded-full transition-all hover:scale-105 active:scale-95 ${isDark ? 'text-zinc-400 hover:bg-zinc-900' : 'text-slate-500 hover:bg-slate-200'}`}
               onClick={toggleTheme}
             >
@@ -153,8 +143,8 @@ export default function ShowcasePageContent() {
             className={`absolute right-0 top-24 h-64 w-64 rounded-full opacity-20 blur-[80px] md:right-10 md:top-1/2 md:h-[400px] md:w-[400px] md:-translate-y-1/2 md:blur-[100px] ${isDark ? 'bg-lime-900' : 'bg-lime-200'}`}
           />
 
-          <div className='pointer-events-auto absolute bottom-10 right-8 top-10 z-10 hidden w-[42%] md:block'>
-            <div className='relative h-full min-h-[500px]'>
+          <div className="pointer-events-auto absolute bottom-10 right-8 top-10 z-10 hidden w-[42%] md:block">
+            <div className="relative h-full min-h-[500px]">
               {stackedImages.map((image, index) => (
                 <div
                   key={image.alt}
@@ -164,8 +154,8 @@ export default function ShowcasePageContent() {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes='(min-width: 1024px) 320px, 40vw'
-                    className='object-cover'
+                    sizes="(min-width: 1024px) 320px, 40vw"
+                    className="object-cover"
                     priority={index === 1}
                   />
                   <div
@@ -176,44 +166,44 @@ export default function ShowcasePageContent() {
             </div>
           </div>
 
-          <div className='relative z-10 flex flex-col gap-8 p-5 sm:p-8 md:min-h-[600px] md:flex-row md:p-16'>
+          <div className="relative z-10 flex flex-col gap-8 p-5 sm:p-8 md:min-h-[600px] md:flex-row md:p-16">
             {/* Sidebar UI Component */}
             <aside
               className={`flex w-full items-center justify-between gap-3 self-center rounded-[24px] px-3 py-3 sm:w-auto sm:justify-center sm:gap-5 md:flex-col md:gap-8 md:rounded-[32px] md:px-4 md:py-8 ${isDark ? 'glass-dark' : 'glass-light'}`}
             >
               <button
-                type='button'
-                aria-label='Show growth dashboard'
+                type="button"
+                aria-label="Show growth dashboard"
                 className={`rounded-2xl p-3 transition-all sm:p-4 ${isDark ? 'bg-lime-500/10 text-lime-400 ring-1 ring-lime-500/50 glow-lime' : 'bg-white shadow-sm text-lime-700'}`}
               >
-                <Leaf className='h-5 w-5 sm:h-6 sm:w-6' />
+                <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
               <button
-                type='button'
-                aria-label='Show analytics'
+                type="button"
+                aria-label="Show analytics"
                 className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <BarChart3 className='h-5 w-5 sm:h-6 sm:w-6' />
+                <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
               <button
-                type='button'
-                aria-label='Show plant systems'
+                type="button"
+                aria-label="Show plant systems"
                 className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <Sprout className='h-5 w-5 sm:h-6 sm:w-6' />
+                <Sprout className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
               <button
-                type='button'
-                aria-label='Show settings'
+                type="button"
+                aria-label="Show settings"
                 className={`rounded-2xl p-3 opacity-40 transition-all hover:opacity-100 sm:p-4 ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
-                <Settings className='h-5 w-5 sm:h-6 sm:w-6' />
+                <Settings className="h-5 w-5 sm:h-6 sm:w-6" />
               </button>
             </aside>
 
             {/* Content Area */}
-            <main className='flex max-w-xl flex-col justify-between gap-8 self-stretch md:ml-16'>
-              <div className='space-y-5 md:space-y-6'>
+            <main className="flex max-w-xl flex-col justify-between gap-8 self-stretch md:ml-16">
+              <div className="space-y-5 md:space-y-6">
                 <span
                   className={`text-[10px] font-bold uppercase tracking-[0.24em] sm:tracking-[0.3em] ${isDark ? 'text-lime-500' : 'text-lime-700'}`}
                 >
@@ -224,25 +214,25 @@ export default function ShowcasePageContent() {
                 >
                   Engineering life.
                   <br />
-                  <span className='italic font-normal'>With intention.</span>
+                  <span className="italic font-normal">With intention.</span>
                 </h2>
                 <p
                   className={`max-w-sm text-base leading-relaxed transition-colors sm:text-lg ${isDark ? 'text-zinc-400' : 'text-slate-600'}`}
                 >
-                  MiaSys unites botanical intelligence, automation, and
-                  ecological insight in a living system that grows with you.
+                  MiaSys unites botanical intelligence, automation, and ecological insight in a
+                  living system that grows with you.
                 </p>
               </div>
 
-              <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4'>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                 <button
-                  type='button'
-                  className='flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#A6E22E] px-6 py-4 font-semibold text-black shadow-lg shadow-lime-500/20 transition-all hover:scale-105 hover:bg-[#95cc29] active:scale-95 sm:px-8'
+                  type="button"
+                  className="flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#A6E22E] px-6 py-4 font-semibold text-black shadow-lg shadow-lime-500/20 transition-all hover:scale-105 hover:bg-[#95cc29] active:scale-95 sm:px-8"
                 >
                   Explore the Studio <ArrowUpRight size={20} />
                 </button>
                 <button
-                  type='button'
+                  type="button"
                   className={`flex min-h-14 items-center justify-center gap-3 rounded-full border px-6 py-4 font-semibold transition-all hover:scale-105 active:scale-95 sm:px-8 ${isDark ? 'border-zinc-800 text-zinc-300 hover:bg-zinc-900' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}
                 >
                   View Protocols <ArrowUpRight size={20} />
@@ -250,7 +240,7 @@ export default function ShowcasePageContent() {
               </div>
             </main>
 
-            <div className='grid grid-cols-3 gap-3 md:hidden'>
+            <div className="grid grid-cols-3 gap-3 md:hidden">
               {stackedImages.map((image, index) => (
                 <div
                   key={image.alt}
@@ -260,8 +250,8 @@ export default function ShowcasePageContent() {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes='(max-width: 767px) 30vw'
-                    className='object-cover'
+                    sizes="(max-width: 767px) 30vw"
+                    className="object-cover"
                     priority={index === 1}
                   />
                 </div>
@@ -274,10 +264,10 @@ export default function ShowcasePageContent() {
         <section
           className={`rounded-[24px] border p-5 transition-colors duration-500 sm:p-8 md:rounded-[28px] md:p-10 ${isDark ? 'border-white/20 bg-[#0B0F12]' : 'border-black/10 bg-[#F7F6F2]'}`}
         >
-          <div className='grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12'>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
             {/* Color System */}
-            <div className='space-y-6'>
-              <div className='flex items-center gap-3'>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
                 <span
                   className={`text-[10px] font-bold py-1 px-2 rounded ${isDark ? 'bg-zinc-800 text-zinc-400' : 'bg-slate-100 text-slate-500'}`}
                 >
@@ -289,7 +279,7 @@ export default function ShowcasePageContent() {
                   Color System
                 </h4>
               </div>
-              <div className='grid grid-cols-3 gap-4'>
+              <div className="grid grid-cols-3 gap-4">
                 {[
                   { name: 'Amber', hex: colors.amber },
                   { name: 'Rose', hex: colors.rose },
@@ -298,20 +288,18 @@ export default function ShowcasePageContent() {
                   { name: 'Midnight', hex: colors.midnight },
                   { name: 'Paper', hex: colors.paper },
                 ].map((c) => (
-                  <div key={c.name} className='space-y-2'>
+                  <div key={c.name} className="space-y-2">
                     <div
-                      className='h-14 w-full rounded-xl border border-white/10'
+                      className="h-14 w-full rounded-xl border border-white/10"
                       style={{ backgroundColor: c.hex }}
                     />
-                    <div className='space-y-0.5'>
+                    <div className="space-y-0.5">
                       <p
                         className={`text-[10px] font-bold ${isDark ? 'text-zinc-400' : 'text-slate-900'}`}
                       >
                         {c.name}
                       </p>
-                      <p className='text-[9px] text-zinc-500 uppercase'>
-                        {c.hex}
-                      </p>
+                      <p className="text-[9px] text-zinc-500 uppercase">{c.hex}</p>
                     </div>
                   </div>
                 ))}
@@ -322,7 +310,7 @@ export default function ShowcasePageContent() {
             <div
               className={`space-y-6 border-t pt-8 md:border-l md:border-t-0 md:pl-8 md:pt-0 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
             >
-              <div className='flex items-center gap-3'>
+              <div className="flex items-center gap-3">
                 <span
                   className={`text-[10px] font-bold py-1 px-2 rounded ${isDark ? 'bg-zinc-800 text-zinc-400' : 'bg-slate-100 text-slate-500'}`}
                 >
@@ -334,39 +322,35 @@ export default function ShowcasePageContent() {
                   Typography
                 </h4>
               </div>
-              <div className='space-y-8'>
-                <div className='flex items-baseline gap-6'>
+              <div className="space-y-8">
+                <div className="flex items-baseline gap-6">
                   <span
                     className={`text-5xl font-display ${isDark ? 'text-white' : 'text-slate-900'}`}
                   >
                     Aa
                   </span>
-                  <div className='space-y-0.5'>
+                  <div className="space-y-0.5">
                     <p
                       className={`text-xs font-bold ${isDark ? 'text-zinc-400' : 'text-slate-900'}`}
                     >
                       Cormorant Garamond
                     </p>
-                    <p className='text-[10px] text-zinc-500'>
-                      Display / Headings
-                    </p>
+                    <p className="text-[10px] text-zinc-500">Display / Headings</p>
                   </div>
                 </div>
-                <div className='flex items-baseline gap-6'>
+                <div className="flex items-baseline gap-6">
                   <span
                     className={`text-4xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}
                   >
                     Aa
                   </span>
-                  <div className='space-y-0.5'>
+                  <div className="space-y-0.5">
                     <p
                       className={`text-xs font-bold ${isDark ? 'text-zinc-400' : 'text-slate-900'}`}
                     >
                       Manrope
                     </p>
-                    <p className='text-[10px] text-zinc-500'>
-                      Medium / Semibold / Body / UI
-                    </p>
+                    <p className="text-[10px] text-zinc-500">Medium / Semibold / Body / UI</p>
                   </div>
                 </div>
               </div>
@@ -376,7 +360,7 @@ export default function ShowcasePageContent() {
             <div
               className={`space-y-6 border-t pt-8 md:border-l md:border-t-0 md:pl-8 md:pt-0 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
             >
-              <div className='flex items-center gap-3'>
+              <div className="flex items-center gap-3">
                 <span
                   className={`text-[10px] font-bold py-1 px-2 rounded ${isDark ? 'bg-zinc-800 text-zinc-400' : 'bg-slate-100 text-slate-500'}`}
                 >
@@ -388,7 +372,7 @@ export default function ShowcasePageContent() {
                   Icons & Components
                 </h4>
               </div>
-              <div className='flex flex-wrap items-center gap-4'>
+              <div className="flex flex-wrap items-center gap-4">
                 <div
                   className={`p-3 rounded-xl ${isDark ? 'bg-zinc-900 border border-zinc-800 text-lime-400' : 'bg-slate-50 border border-slate-100 text-lime-700'}`}
                 >
@@ -410,16 +394,16 @@ export default function ShowcasePageContent() {
                   <Settings size={18} />
                 </div>
               </div>
-              <div className='flex flex-wrap items-center gap-4'>
+              <div className="flex flex-wrap items-center gap-4">
                 <button
-                  type='button'
-                  className='flex h-12 w-32 items-center justify-center gap-2 rounded-full bg-lime-500 text-[10px] font-bold uppercase tracking-widest text-black'
+                  type="button"
+                  className="flex h-12 w-32 items-center justify-center gap-2 rounded-full bg-lime-500 text-[10px] font-bold uppercase tracking-widest text-black"
                 >
                   Primary <ArrowUpRight size={14} />
                 </button>
                 <button
-                  type='button'
-                  aria-label='Open component detail'
+                  type="button"
+                  aria-label="Open component detail"
                   className={`flex h-12 w-12 items-center justify-center rounded-full border ${isDark ? 'border-zinc-800 text-white' : 'border-slate-200 bg-slate-100 text-slate-900'}`}
                 >
                   <ArrowUpRight size={16} />
@@ -431,14 +415,12 @@ export default function ShowcasePageContent() {
           <div
             className={`mt-10 flex flex-col gap-4 border-t pt-6 opacity-60 sm:flex-row sm:items-center sm:justify-between md:mt-12 md:pt-8 ${isDark ? 'border-zinc-800' : 'border-slate-200'}`}
           >
-            <div className='flex max-w-sm items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-zinc-400 sm:tracking-[0.2em]'>
-              <Leaf size={12} className='text-lime-500' />
+            <div className="flex max-w-sm items-center gap-2 text-[10px] uppercase tracking-[0.16em] text-zinc-400 sm:tracking-[0.2em]">
+              <Leaf size={12} className="text-lime-500" />
               Organic by logic.{' '}
-              <span className='text-lime-500 font-bold'>
-                Engineered for life.
-              </span>
+              <span className="text-lime-500 font-bold">Engineered for life.</span>
             </div>
-            <p className='text-[10px] text-zinc-500'>
+            <p className="text-[10px] text-zinc-500">
               © 2026 MIASYS BOTANICAL SYSTEMS. ALL RIGHTS RESERVED.
             </p>
           </div>

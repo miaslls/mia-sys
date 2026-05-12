@@ -114,8 +114,7 @@ export default function ArticlePageContent() {
   const [theme, setTheme] = useState<Theme>('dark');
 
   const isDark = theme === 'dark';
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   return (
     <div
@@ -140,24 +139,23 @@ export default function ArticlePageContent() {
         `}
       </style>
 
-      <div className='flex min-h-screen'>
+      <div className="flex min-h-screen">
         <Sidebar isDark={isDark} />
 
-        <main className='article-scroll h-screen min-w-0 flex-1 overflow-y-auto'>
+        <main className="article-scroll h-screen min-w-0 flex-1 overflow-y-auto">
           <Header isDark={isDark} onToggleTheme={toggleTheme} />
 
-          <div className='mx-auto w-full max-w-[1060px] px-5 pb-8 pt-8 sm:px-8 lg:px-12'>
-            <section className='grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start'>
+          <div className="mx-auto w-full max-w-[1060px] px-5 pb-8 pt-8 sm:px-8 lg:px-12">
+            <section className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
               <HeroCopy isDark={isDark} />
               <HeroVisual isDark={isDark} />
             </section>
 
-            <div className='mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_316px]'>
+            <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_316px]">
               <ArticleBody isDark={isDark} />
               <ArticleRail isDark={isDark} />
             </div>
           </div>
-
         </main>
       </div>
     </div>
@@ -168,17 +166,15 @@ function Sidebar({ isDark }: { isDark: boolean }) {
   return (
     <aside
       className={`sticky top-0 hidden h-screen w-[252px] shrink-0 flex-col border-r px-6 py-7 transition-colors xl:flex ${
-        isDark
-          ? 'border-white/10 bg-[#05090D]'
-          : 'border-black/10 bg-[#F8F6EF]'
+        isDark ? 'border-white/10 bg-[#05090D]' : 'border-black/10 bg-[#F8F6EF]'
       }`}
     >
       <div
-        aria-label='MiaSys Botanical Engineering'
+        aria-label="MiaSys Botanical Engineering"
         className={`mb-14 h-[82px] w-[158px] bg-current ${
           isDark ? 'text-white' : 'text-slate-950'
         }`}
-        role='img'
+        role="img"
         style={{
           maskImage: `url(${MiaSysLogo.src})`,
           maskPosition: 'left center',
@@ -191,11 +187,11 @@ function Sidebar({ isDark }: { isDark: boolean }) {
         }}
       />
 
-      <nav className='flex-1 space-y-4'>
+      <nav className="flex-1 space-y-4">
         {menuItems.map((item) => (
           <button
             key={item.label}
-            type='button'
+            type="button"
             className={`flex h-12 w-full items-center gap-4 rounded-[24px] border px-4 text-sm transition-all ${
               item.active
                 ? 'border-lime-400/45 bg-lime-400/10 text-lime-400'
@@ -210,24 +206,24 @@ function Sidebar({ isDark }: { isDark: boolean }) {
         ))}
       </nav>
 
-      <div className='mt-auto'>
+      <div className="mt-auto">
         <button
-          type='button'
+          type="button"
           className={panelClass(
             isDark,
-            'flex w-full items-center gap-3 rounded-[24px] p-3 text-left',
+            'flex w-full items-center gap-3 rounded-[24px] p-3 text-left'
           )}
         >
-          <span className='relative h-10 w-10 overflow-hidden rounded-full bg-zinc-900'>
+          <span className="relative h-10 w-10 overflow-hidden rounded-full bg-zinc-900">
             <Image
               src={WednesdayImage}
-              alt='Dr. Elara Voss'
+              alt="Dr. Elara Voss"
               fill
-              sizes='40px'
-              className='object-cover'
+              sizes="40px"
+              className="object-cover"
             />
           </span>
-          <span className='min-w-0 flex-1'>
+          <span className="min-w-0 flex-1">
             <span
               className={`block text-[11px] font-semibold ${
                 isDark ? 'text-zinc-100' : 'text-slate-950'
@@ -235,36 +231,28 @@ function Sidebar({ isDark }: { isDark: boolean }) {
             >
               Dr. Elara Voss
             </span>
-            <span className='block text-[10px] text-zinc-500'>Lead Botanist</span>
+            <span className="block text-[10px] text-zinc-500">Lead Botanist</span>
           </span>
-          <ChevronDown size={16} className='text-zinc-500' />
+          <ChevronDown size={16} className="text-zinc-500" />
         </button>
       </div>
     </aside>
   );
 }
 
-function Header({
-  isDark,
-  onToggleTheme,
-}: {
-  isDark: boolean;
-  onToggleTheme: () => void;
-}) {
+function Header({ isDark, onToggleTheme }: { isDark: boolean; onToggleTheme: () => void }) {
   return (
     <header
       className={`sticky top-0 z-40 border-b px-5 py-6 backdrop-blur-2xl transition-colors sm:px-8 lg:px-12 ${
-        isDark
-          ? 'border-transparent bg-[#05090D]/78'
-          : 'border-black/5 bg-[#F2F0E8]/80'
+        isDark ? 'border-transparent bg-[#05090D]/78' : 'border-black/5 bg-[#F2F0E8]/80'
       }`}
     >
-      <div className='mx-auto flex max-w-[1060px] items-center justify-between gap-5'>
-        <nav className='hidden items-center gap-10 md:flex'>
+      <div className="mx-auto flex max-w-[1060px] items-center justify-between gap-5">
+        <nav className="hidden items-center gap-10 md:flex">
           {['Design System', 'Guides', 'Articles', 'Updates'].map((link) => (
             <a
               key={link}
-              href='#'
+              href="#"
               className={`relative text-sm transition-colors ${
                 link === 'Articles'
                   ? isDark
@@ -277,37 +265,34 @@ function Header({
             >
               {link}
               {link === 'Articles' && (
-                <span className='absolute -bottom-5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-lime-400 shadow-[0_0_16px_rgba(166,226,46,0.8)]' />
+                <span className="absolute -bottom-5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-lime-400 shadow-[0_0_16px_rgba(166,226,46,0.8)]" />
               )}
             </a>
           ))}
         </nav>
 
-        <div className='flex min-w-0 flex-1 items-center justify-end gap-3'>
-          <label className='relative block w-full max-w-[276px]'>
-            <span className='sr-only'>Search articles</span>
-            <Search
-              size={16}
-              className='absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500'
-            />
+        <div className="flex min-w-0 flex-1 items-center justify-end gap-3">
+          <label className="relative block w-full max-w-[276px]">
+            <span className="sr-only">Search articles</span>
+            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
             <input
-              type='search'
-              placeholder='Search...'
+              type="search"
+              placeholder="Search..."
               className={`h-11 w-full rounded-full border py-2 pl-11 pr-14 text-sm outline-none transition-colors ${
                 isDark
                   ? 'border-lime-200/15 bg-white/[0.04] text-zinc-200 placeholder:text-zinc-500 focus:border-lime-400/55'
                   : 'border-black/10 bg-white/70 text-slate-900 placeholder:text-slate-400 focus:border-lime-500'
               }`}
             />
-            <span className='absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] text-zinc-500'>
+            <span className="absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] text-zinc-500">
               <Command size={11} />K
             </span>
           </label>
 
           <button
-            type='button'
+            type="button"
             onClick={onToggleTheme}
-            aria-label='Toggle color theme'
+            aria-label="Toggle color theme"
             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${
               isDark
                 ? 'border-lime-200/15 bg-white/[0.04] text-zinc-400 hover:text-lime-300'
@@ -324,22 +309,20 @@ function Header({
 
 function HeroCopy({ isDark }: { isDark: boolean }) {
   return (
-    <div className='pt-3'>
-      <nav className='mb-12 flex flex-wrap items-center gap-3 text-xs'>
-        <a href='#' className='text-lime-400'>
+    <div className="pt-3">
+      <nav className="mb-12 flex flex-wrap items-center gap-3 text-xs">
+        <a href="#" className="text-lime-400">
           Home
         </a>
-        <span className='text-zinc-600'>/</span>
-        <a href='#' className='text-lime-400'>
+        <span className="text-zinc-600">/</span>
+        <a href="#" className="text-lime-400">
           Articles
         </a>
-        <span className='text-zinc-600'>/</span>
-        <span className={isDark ? 'text-zinc-400' : 'text-slate-500'}>
-          Design Philosophy
-        </span>
+        <span className="text-zinc-600">/</span>
+        <span className={isDark ? 'text-zinc-400' : 'text-slate-500'}>Design Philosophy</span>
       </nav>
 
-      <div className='mb-6 inline-flex rounded-full border border-lime-400/30 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-lime-400'>
+      <div className="mb-6 inline-flex rounded-full border border-lime-400/30 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-lime-400">
         Design Philosophy
       </div>
 
@@ -349,7 +332,7 @@ function HeroCopy({ isDark }: { isDark: boolean }) {
         }`}
       >
         Designing with Nature, Building for Life
-        <span className='text-lime-400'>.</span>
+        <span className="text-lime-400">.</span>
       </h1>
 
       <p
@@ -357,41 +340,32 @@ function HeroCopy({ isDark }: { isDark: boolean }) {
           isDark ? 'text-zinc-400' : 'text-slate-600'
         }`}
       >
-        At MiaSys, we believe software should feel grown and living. Our design
-        philosophy merges botanical intelligence with engineered precision to
-        create digital experiences that breathe.
+        At MiaSys, we believe software should feel grown and living. Our design philosophy merges
+        botanical intelligence with engineered precision to create digital experiences that breathe.
       </p>
 
-      <div className='mt-9 flex flex-wrap items-center gap-8'>
-        <div className='flex items-center gap-4'>
-          <span className='relative h-12 w-12 overflow-hidden rounded-full bg-zinc-900'>
+      <div className="mt-9 flex flex-wrap items-center gap-8">
+        <div className="flex items-center gap-4">
+          <span className="relative h-12 w-12 overflow-hidden rounded-full bg-zinc-900">
             <Image
               src={WednesdayImage}
-              alt='Dr. Elara Voss'
+              alt="Dr. Elara Voss"
               fill
-              sizes='48px'
-              className='object-cover'
+              sizes="48px"
+              className="object-cover"
             />
           </span>
           <span>
-            <span
-              className={`block text-sm ${isDark ? 'text-zinc-100' : 'text-slate-950'}`}
-            >
+            <span className={`block text-sm ${isDark ? 'text-zinc-100' : 'text-slate-950'}`}>
               By Dr. Elara Voss
             </span>
-            <span className='block text-xs text-zinc-500'>Lead Botanist</span>
+            <span className="block text-xs text-zinc-500">Lead Botanist</span>
           </span>
         </div>
-        <span
-          className={`hidden h-12 w-px sm:block ${
-            isDark ? 'bg-white/10' : 'bg-black/10'
-          }`}
-        />
-        <div className='text-sm'>
-          <p className={isDark ? 'text-zinc-200' : 'text-slate-800'}>
-            May 24, 2024
-          </p>
-          <p className='text-xs text-zinc-500'>8 min read</p>
+        <span className={`hidden h-12 w-px sm:block ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
+        <div className="text-sm">
+          <p className={isDark ? 'text-zinc-200' : 'text-slate-800'}>May 24, 2024</p>
+          <p className="text-xs text-zinc-500">8 min read</p>
         </div>
       </div>
     </div>
@@ -400,8 +374,8 @@ function HeroCopy({ isDark }: { isDark: boolean }) {
 
 function HeroVisual({ isDark }: { isDark: boolean }) {
   return (
-    <div className='relative hidden min-h-[440px] lg:block'>
-      <div className='absolute -right-4 top-2 h-[415px] w-[370px] rounded-full border border-lime-400/35 opacity-70' />
+    <div className="relative hidden min-h-[440px] lg:block">
+      <div className="absolute -right-4 top-2 h-[415px] w-[370px] rounded-full border border-lime-400/35 opacity-70" />
       <div
         className={`article-hero-blob absolute right-0 top-2 h-[430px] w-[360px] overflow-hidden border ${
           isDark ? 'border-lime-400/25 bg-lime-400/5' : 'border-lime-700/20 bg-lime-100'
@@ -409,10 +383,10 @@ function HeroVisual({ isDark }: { isDark: boolean }) {
       >
         <Image
           src={EvaImage}
-          alt='Botanical leaves for the MiaSys article'
+          alt="Botanical leaves for the MiaSys article"
           fill
           priority
-          sizes='360px'
+          sizes="360px"
           className={`object-cover ${
             isDark ? 'brightness-[0.48] contrast-125 saturate-125' : 'brightness-95'
           }`}
@@ -425,19 +399,17 @@ function HeroVisual({ isDark }: { isDark: boolean }) {
           }`}
         />
       </div>
-      <div className='absolute right-10 top-20 h-28 w-28 rounded-full bg-lime-400/10 blur-3xl' />
+      <div className="absolute right-10 top-20 h-28 w-28 rounded-full bg-lime-400/10 blur-3xl" />
     </div>
   );
 }
 
 function ArticleBody({ isDark }: { isDark: boolean }) {
   return (
-    <article className='min-w-0'>
-      <div
-        className={`mb-11 h-px w-full ${isDark ? 'bg-white/10' : 'bg-black/10'}`}
-      />
+    <article className="min-w-0">
+      <div className={`mb-11 h-px w-full ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
 
-      <section className='space-y-7'>
+      <section className="space-y-7">
         <h2
           className={`font-display text-4xl leading-tight ${
             isDark ? 'text-zinc-50' : 'text-slate-950'
@@ -450,14 +422,13 @@ function ArticleBody({ isDark }: { isDark: boolean }) {
             isDark ? 'text-zinc-400' : 'text-slate-600'
           }`}
         >
-          MiaSys is built on the principle of Organic Logic - the belief that
-          systems should mimic nature&apos;s intelligence: adaptive, efficient, and
-          in harmony with its environment.
+          MiaSys is built on the principle of Organic Logic - the belief that systems should mimic
+          nature&apos;s intelligence: adaptive, efficient, and in harmony with its environment.
         </p>
 
         <div className={panelClass(isDark, 'rounded-[28px] p-5 sm:p-7')}>
-          <div className='flex items-center gap-6'>
-            <div className='flex h-16 w-16 shrink-0 items-center justify-center rounded-[18px] border border-lime-400/25 bg-lime-400/10 text-lime-400'>
+          <div className="flex items-center gap-6">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[18px] border border-lime-400/25 bg-lime-400/10 text-lime-400">
               <Leaf size={30} strokeWidth={1.5} />
             </div>
             <p
@@ -467,29 +438,24 @@ function ArticleBody({ isDark }: { isDark: boolean }) {
             >
               We don&apos;t just design interfaces.
               <br />
-              We <span className='italic text-lime-400'>cultivate</span>{' '}
-              experiences.
+              We <span className="italic text-lime-400">cultivate</span> experiences.
             </p>
           </div>
         </div>
 
-        <p
-          className={`pt-3 text-base ${isDark ? 'text-zinc-400' : 'text-slate-600'}`}
-        >
+        <p className={`pt-3 text-base ${isDark ? 'text-zinc-400' : 'text-slate-600'}`}>
           Our approach blends three core ideals:
         </p>
 
-        <div className='space-y-9 pt-2'>
+        <div className="space-y-9 pt-2">
           {principles.map((principle) => (
-            <div key={principle.title} className='flex gap-7'>
-              <div className='flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[18px] border border-lime-400/35 bg-lime-400/10 text-lime-400 shadow-[0_0_28px_rgba(166,226,46,0.08)]'>
+            <div key={principle.title} className="flex gap-7">
+              <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[18px] border border-lime-400/35 bg-lime-400/10 text-lime-400 shadow-[0_0_28px_rgba(166,226,46,0.08)]">
                 <principle.icon size={30} strokeWidth={1.4} />
               </div>
               <div>
                 <h3
-                  className={`font-display text-2xl ${
-                    isDark ? 'text-zinc-50' : 'text-slate-950'
-                  }`}
+                  className={`font-display text-2xl ${isDark ? 'text-zinc-50' : 'text-slate-950'}`}
                 >
                   {principle.title}
                 </h3>
@@ -523,24 +489,24 @@ function ArticleBody({ isDark }: { isDark: boolean }) {
             isDark ? 'text-zinc-400' : 'text-slate-600'
           }`}
         >
-          Nature is our greatest engineer. From fractals to foliage, every
-          pattern serves a purpose. MiaSys translates these patterns into a
-          design language that is both beautiful and functional.
+          Nature is our greatest engineer. From fractals to foliage, every pattern serves a purpose.
+          MiaSys translates these patterns into a design language that is both beautiful and
+          functional.
         </p>
 
         <button
-          type='button'
+          type="button"
           className={panelClass(
             isDark,
-            'group flex w-full items-center gap-6 rounded-[24px] p-3 text-left sm:p-4',
+            'group flex w-full items-center gap-6 rounded-[24px] p-3 text-left sm:p-4'
           )}
         >
-          <span className='relative hidden h-[72px] w-[126px] shrink-0 overflow-hidden rounded-[18px] sm:block'>
+          <span className="relative hidden h-[72px] w-[126px] shrink-0 overflow-hidden rounded-[18px] sm:block">
             <Image
               src={PriscillaImage}
-              alt='Botanical reference'
+              alt="Botanical reference"
               fill
-              sizes='126px'
+              sizes="126px"
               className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
                 isDark ? 'brightness-[0.56] contrast-125' : ''
               }`}
@@ -553,9 +519,9 @@ function ArticleBody({ isDark }: { isDark: boolean }) {
           >
             Biomimicry drives clarity.
             <br />
-            Clarity drives <span className='text-lime-400'>trust.</span>
+            Clarity drives <span className="text-lime-400">trust.</span>
           </span>
-          <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition-colors group-hover:border-lime-400 group-hover:bg-lime-400 group-hover:text-black'>
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-zinc-300 transition-colors group-hover:border-lime-400 group-hover:bg-lime-400 group-hover:text-black">
             <ArrowUpRight size={21} />
           </span>
         </button>
@@ -564,14 +530,13 @@ function ArticleBody({ isDark }: { isDark: boolean }) {
           We study. We observe. We iterate. This is how we grow.
         </p>
       </section>
-
     </article>
   );
 }
 
 function ArticleRail({ isDark }: { isDark: boolean }) {
   return (
-    <aside className='space-y-5 lg:sticky lg:top-28 lg:self-start'>
+    <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
       <OnThisPage isDark={isDark} />
       <RelatedArticles isDark={isDark} />
       <CommunityCard isDark={isDark} />
@@ -582,17 +547,13 @@ function ArticleRail({ isDark }: { isDark: boolean }) {
 function OnThisPage({ isDark }: { isDark: boolean }) {
   return (
     <section className={panelClass(isDark, 'rounded-[32px] p-7')}>
-      <h2 className='text-[11px] uppercase tracking-[0.12em] text-zinc-400'>
-        On This Page
-      </h2>
-      <ul className='mt-5 space-y-5 border-l border-white/10 pl-4'>
+      <h2 className="text-[11px] uppercase tracking-[0.12em] text-zinc-400">On This Page</h2>
+      <ul className="mt-5 space-y-5 border-l border-white/10 pl-4">
         {anchorLinks.map((link, index) => (
-          <li key={link} className='relative'>
-            {index === 0 && (
-              <span className='absolute -left-[17px] top-0 h-7 w-px bg-lime-400' />
-            )}
+          <li key={link} className="relative">
+            {index === 0 && <span className="absolute -left-[17px] top-0 h-7 w-px bg-lime-400" />}
             <a
-              href='#'
+              href="#"
               className={`text-sm transition-colors ${
                 index === 0
                   ? 'text-lime-400'
@@ -613,28 +574,26 @@ function OnThisPage({ isDark }: { isDark: boolean }) {
 function RelatedArticles({ isDark }: { isDark: boolean }) {
   return (
     <section className={panelClass(isDark, 'rounded-[32px] p-7')}>
-      <h2 className='text-[11px] uppercase tracking-[0.12em] text-zinc-400'>
-        Related Articles
-      </h2>
-      <div className='mt-5 divide-y divide-white/10'>
+      <h2 className="text-[11px] uppercase tracking-[0.12em] text-zinc-400">Related Articles</h2>
+      <div className="mt-5 divide-y divide-white/10">
         {relatedArticles.map((article) => (
           <a
             key={article.title}
-            href='#'
-            className='group flex items-center gap-4 py-4 first:pt-0 last:pb-0'
+            href="#"
+            className="group flex items-center gap-4 py-4 first:pt-0 last:pb-0"
           >
-            <span className='relative h-[78px] w-[78px] shrink-0 overflow-hidden rounded-[18px] border border-white/10'>
+            <span className="relative h-[78px] w-[78px] shrink-0 overflow-hidden rounded-[18px] border border-white/10">
               <Image
                 src={article.img}
                 alt={article.title}
                 fill
-                sizes='78px'
+                sizes="78px"
                 className={`object-cover transition-all duration-500 group-hover:scale-105 ${
                   isDark ? 'brightness-[0.55] contrast-125 saturate-110' : ''
                 }`}
               />
             </span>
-            <span className='min-w-0 flex-1'>
+            <span className="min-w-0 flex-1">
               <span
                 className={`block font-display text-lg leading-tight ${
                   isDark ? 'text-zinc-50' : 'text-slate-950'
@@ -652,7 +611,7 @@ function RelatedArticles({ isDark }: { isDark: boolean }) {
             </span>
             <ArrowRight
               size={18}
-              className='shrink-0 text-zinc-500 transition-colors group-hover:text-lime-400'
+              className="shrink-0 text-zinc-500 transition-colors group-hover:text-lime-400"
             />
           </a>
         ))}
@@ -664,7 +623,7 @@ function RelatedArticles({ isDark }: { isDark: boolean }) {
 function CommunityCard({ isDark }: { isDark: boolean }) {
   return (
     <section className={panelClass(isDark, 'rounded-[32px] p-7')}>
-      <div className='flex h-12 w-12 items-center justify-center rounded-2xl border border-lime-400/25 bg-lime-400/10 text-lime-400'>
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-lime-400/25 bg-lime-400/10 text-lime-400">
         <Sprout size={23} strokeWidth={1.5} />
       </div>
       <h2
@@ -678,7 +637,7 @@ function CommunityCard({ isDark }: { isDark: boolean }) {
         Join the conversation in our community forum.
       </p>
       <a
-        href='#'
+        href="#"
         className={`mt-6 flex h-11 items-center justify-between rounded-full border px-5 text-sm transition-colors ${
           isDark
             ? 'border-lime-200/15 text-zinc-300 hover:border-lime-400/40 hover:text-lime-300'

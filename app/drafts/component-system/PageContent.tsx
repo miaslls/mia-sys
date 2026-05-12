@@ -47,9 +47,7 @@ type Theme = 'dark' | 'light';
 
 function getThemeClasses(isDark: boolean) {
   return {
-    page: isDark
-      ? 'bg-[#07090A] text-[#F5F1E6]'
-      : 'bg-[#F2F0EA] text-[#172018]',
+    page: isDark ? 'bg-[#07090A] text-[#F5F1E6]' : 'bg-[#F2F0EA] text-[#172018]',
     section: isDark
       ? 'border-white/12 bg-white/[0.025] shadow-[0_24px_80px_rgba(0,0,0,0.24)]'
       : 'border-[#D5D0C3] bg-white/70 shadow-[0_24px_80px_rgba(92,82,64,0.12)]',
@@ -68,17 +66,13 @@ function getThemeClasses(isDark: boolean) {
     neutralControl: isDark
       ? 'border-white/20 bg-[#0A0D0E] text-[#F5F1E6]'
       : 'border-[#C9C2B4] bg-white/80 text-[#172018]',
-    toggleOff: isDark
-      ? 'border-white/20 bg-[#0D1011]'
-      : 'border-[#BEB7AA] bg-white/70',
+    toggleOff: isDark ? 'border-white/20 bg-[#0D1011]' : 'border-[#BEB7AA] bg-white/70',
     checkBorder: isDark ? 'border-white/24' : 'border-[#AFA99E]',
     divider: isDark ? 'border-white/10' : 'border-[#D8D2C4]',
     iconBox: isDark
       ? 'border-white/16 text-[#F5F1E6]'
       : 'border-[#D1CABC] bg-white/55 text-[#172018]',
-    segment: isDark
-      ? 'border-[#9DCC1F]/45 bg-[#090B0C]'
-      : 'border-[#7FA91A]/55 bg-white/75',
+    segment: isDark ? 'border-[#9DCC1F]/45 bg-[#090B0C]' : 'border-[#7FA91A]/55 bg-white/75',
     stroke: isDark ? 'bg-[#F5F1E6]' : 'bg-[#172018]',
     radiusBox: isDark ? 'bg-white/[0.02]' : 'bg-white/65',
   };
@@ -103,11 +97,9 @@ function SectionShell({
     <section
       className={`rounded-[28px] border transition-colors duration-500 ${ui.section} ${className}`}
     >
-      <div className='flex items-center gap-5 px-6 pt-5 sm:px-8'>
-        <span className='font-mono text-sm text-[#9DCC1F]'>{index}</span>
-        <h2
-          className={`text-sm font-semibold uppercase tracking-[0.16em] ${ui.sectionTitle}`}
-        >
+      <div className="flex items-center gap-5 px-6 pt-5 sm:px-8">
+        <span className="font-mono text-sm text-[#9DCC1F]">{index}</span>
+        <h2 className={`text-sm font-semibold uppercase tracking-[0.16em] ${ui.sectionTitle}`}>
           {title}
         </h2>
       </div>
@@ -156,7 +148,7 @@ function StateButton({
   return (
     <button
       className={`flex h-12 w-full min-w-40 items-center justify-between rounded-[14px] border px-5 text-sm transition ${styles[tone]} ${stateClass}`}
-      type='button'
+      type="button"
     >
       <span>{labels[tone]}</span>
       <ArrowUpRight size={18} strokeWidth={1.6} />
@@ -172,8 +164,7 @@ export default function ComponentsPageContent() {
   const [segmented, setSegmented] = useState('Option 1');
   const isDark = theme === 'dark';
   const ui = getThemeClasses(isDark);
-  const toggleTheme = () =>
-    setTheme((current): Theme => (current === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setTheme((current): Theme => (current === 'dark' ? 'light' : 'dark'));
 
   return (
     <main
@@ -200,15 +191,15 @@ export default function ComponentsPageContent() {
         `}
       </style>
 
-      <div className='component-noise relative mx-auto max-w-7xl space-y-8 md:space-y-12'>
-        <header className='flex items-start justify-between gap-4 md:items-center md:gap-8'>
-          <div className='flex min-w-0 items-center gap-4 sm:gap-6'>
+      <div className="component-noise relative mx-auto max-w-7xl space-y-8 md:space-y-12">
+        <header className="flex items-start justify-between gap-4 md:items-center md:gap-8">
+          <div className="flex min-w-0 items-center gap-4 sm:gap-6">
             <div
               className={`grid h-12 w-12 shrink-0 place-items-center rounded-[18px] border shadow-[0_0_32px_rgba(166,226,46,0.12)] transition-all sm:h-16 sm:w-16 sm:rounded-[26px] ${isDark ? 'border-[#A6E22E]/40 bg-[#A6E22E]/5 text-[#F7F6F2]' : 'border-[#739E1C]/40 bg-[#F7F6F2] text-[#516F12]'}`}
             >
               <span
-                aria-hidden='true'
-                className='h-6 w-6 bg-current sm:h-8 sm:w-8'
+                aria-hidden="true"
+                className="h-6 w-6 bg-current sm:h-8 sm:w-8"
                 style={{
                   maskImage: `url(${LeafLogo.src})`,
                   maskPosition: 'center',
@@ -221,7 +212,7 @@ export default function ComponentsPageContent() {
                 }}
               />
             </div>
-            <div className='min-w-0'>
+            <div className="min-w-0">
               <h1
                 className={`font-display text-3xl tracking-tight transition-colors sm:text-4xl ${isDark ? 'text-white' : 'text-slate-900'}`}
               >
@@ -230,15 +221,14 @@ export default function ComponentsPageContent() {
               <p
                 className={`mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.16em] transition-colors sm:text-[10px] sm:tracking-[0.2em] ${isDark ? 'text-zinc-500' : 'text-slate-500'}`}
               >
-                Component System{' '}
-                <span className='ml-1 text-lime-500 sm:ml-2'>v 0.1.0</span>
+                Component System <span className="ml-1 text-lime-500 sm:ml-2">v 0.1.0</span>
               </p>
             </div>
           </div>
 
-          <div className='flex shrink-0 items-center justify-end gap-4 md:gap-6'>
-            <div className='hidden text-right md:block'>
-              <p className='text-sm font-semibold leading-none text-lime-500'>
+          <div className="flex shrink-0 items-center justify-end gap-4 md:gap-6">
+            <div className="hidden text-right md:block">
+              <p className="text-sm font-semibold leading-none text-lime-500">
                 Organic Logic Interface
               </p>
               <p
@@ -251,8 +241,8 @@ export default function ComponentsPageContent() {
               className={`hidden h-10 w-px md:block ${isDark ? 'bg-zinc-800' : 'bg-slate-300'}`}
             />
             <button
-              type='button'
-              aria-label='Toggle color theme'
+              type="button"
+              aria-label="Toggle color theme"
               className={`grid h-9 w-9 place-items-center rounded-full transition-all hover:scale-105 active:scale-95 ${isDark ? 'text-zinc-400 hover:bg-zinc-900' : 'text-slate-500 hover:bg-slate-200'}`}
               onClick={toggleTheme}
             >
@@ -261,9 +251,9 @@ export default function ComponentsPageContent() {
           </div>
         </header>
 
-        <SectionShell index='01' title='Buttons' theme={theme}>
-          <div className='overflow-x-auto px-6 pb-8 pt-6 sm:px-8'>
-            <div className='grid min-w-[860px] grid-cols-[84px_repeat(4,minmax(160px,1fr))] gap-x-10 gap-y-4'>
+        <SectionShell index="01" title="Buttons" theme={theme}>
+          <div className="overflow-x-auto px-6 pb-8 pt-6 sm:px-8">
+            <div className="grid min-w-[860px] grid-cols-[84px_repeat(4,minmax(160px,1fr))] gap-x-10 gap-y-4">
               <div />
               {['Primary', 'Secondary', 'Ghost', 'Pill / Tag'].map((label) => (
                 <p
@@ -275,37 +265,19 @@ export default function ComponentsPageContent() {
               ))}
 
               {buttonStates.map((state) => (
-                <div className='contents' key={state.label}>
-                  <p className={`flex h-12 items-center text-sm ${ui.muted}`}>
-                    {state.label}
-                  </p>
-                  <StateButton
-                    tone='primary'
-                    stateClass={state.className}
-                    theme={theme}
-                  />
-                  <StateButton
-                    tone='secondary'
-                    stateClass={state.className}
-                    theme={theme}
-                  />
-                  <StateButton
-                    tone='ghost'
-                    stateClass={state.className}
-                    theme={theme}
-                  />
+                <div className="contents" key={state.label}>
+                  <p className={`flex h-12 items-center text-sm ${ui.muted}`}>{state.label}</p>
+                  <StateButton tone="primary" stateClass={state.className} theme={theme} />
+                  <StateButton tone="secondary" stateClass={state.className} theme={theme} />
+                  <StateButton tone="ghost" stateClass={state.className} theme={theme} />
                   <div
                     className={`flex h-12 w-full min-w-40 items-center justify-between rounded-[14px] border px-4 transition ${isDark ? 'border-white/14 bg-[#0D1011]' : 'border-[#D8D2C4] bg-white/60'} ${state.className} ${state.label === 'Hover' ? 'border-[#9DCC1F]' : ''}`}
                   >
-                    <span
-                      className={`inline-flex items-center gap-2 text-sm ${ui.strong}`}
-                    >
-                      <Leaf size={16} className='text-[#9DCC1F]' />
+                    <span className={`inline-flex items-center gap-2 text-sm ${ui.strong}`}>
+                      <Leaf size={16} className="text-[#9DCC1F]" />
                       Botanical
                     </span>
-                    <span
-                      className={`text-sm ${isDark ? 'text-[#E5DEC8]' : 'text-[#4F5D49]'}`}
-                    >
+                    <span className={`text-sm ${isDark ? 'text-[#E5DEC8]' : 'text-[#4F5D49]'}`}>
                       Logic
                     </span>
                   </div>
@@ -315,65 +287,63 @@ export default function ComponentsPageContent() {
           </div>
         </SectionShell>
 
-        <SectionShell index='02' title='Inputs & Controls' theme={theme}>
-          <div className='grid gap-10 px-6 pb-8 pt-6 md:grid-cols-3 sm:px-8'>
-            <div className='space-y-8'>
-              <label className='block space-y-4'>
+        <SectionShell index="02" title="Inputs & Controls" theme={theme}>
+          <div className="grid gap-10 px-6 pb-8 pt-6 md:grid-cols-3 sm:px-8">
+            <div className="space-y-8">
+              <label className="block space-y-4">
                 <span
                   className={`block text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
                 >
                   Text Input
                 </span>
-                <span className='relative block'>
+                <span className="relative block">
                   <input
                     className={`field-focus h-14 w-full rounded-[12px] border px-5 pr-12 text-sm ${ui.control}`}
-                    placeholder='Type something...'
-                    type='text'
+                    placeholder="Type something..."
+                    type="text"
                   />
                   <Leaf
-                    className='absolute right-4 top-1/2 -translate-y-1/2 text-[#9DCC1F]'
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9DCC1F]"
                     size={19}
                     strokeWidth={1.6}
                   />
                 </span>
               </label>
 
-              <div className='space-y-4'>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+              <div className="space-y-4">
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Toggle
                 </p>
-                <div className='flex gap-4'>
+                <div className="flex gap-4">
                   <button
                     aria-pressed={toggle}
                     className={`relative h-9 w-[74px] rounded-full border transition ${toggle ? 'border-[#9DCC1F]/60 bg-[linear-gradient(135deg,#9DCC1F,#4E690B)]' : ui.toggleOff}`}
                     onClick={() => setToggle((current) => !current)}
-                    type='button'
+                    type="button"
                   >
                     <span
                       className={`absolute top-1 h-7 w-7 rounded-full bg-[#F7F3E8] shadow transition ${toggle ? 'left-10' : 'left-1'}`}
                     />
                   </button>
                   <button
-                    aria-pressed='false'
+                    aria-pressed="false"
                     className={`relative h-9 w-[74px] rounded-full border ${ui.toggleOff}`}
-                    type='button'
+                    type="button"
                   >
-                    <span className='absolute left-1 top-1 h-7 w-7 rounded-full bg-[#F7F3E8] shadow' />
+                    <span className="absolute left-1 top-1 h-7 w-7 rounded-full bg-[#F7F3E8] shadow" />
                   </button>
                 </div>
               </div>
             </div>
 
-            <div className='space-y-8'>
-              <label className='block space-y-4'>
+            <div className="space-y-8">
+              <label className="block space-y-4">
                 <span
                   className={`block text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
                 >
                   Search Field
                 </span>
-                <span className='relative block'>
+                <span className="relative block">
                   <Search
                     className={`absolute left-5 top-1/2 -translate-y-1/2 ${ui.strong}`}
                     size={20}
@@ -381,23 +351,21 @@ export default function ComponentsPageContent() {
                   />
                   <input
                     className={`field-focus h-14 w-full rounded-full border py-0 pl-14 pr-5 text-sm ${ui.control}`}
-                    placeholder='Search protocols...'
-                    type='search'
+                    placeholder="Search protocols..."
+                    type="search"
                   />
                 </span>
               </label>
 
-              <div className='grid grid-cols-2 gap-8'>
-                <div className='space-y-4'>
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                  >
+              <div className="grid grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                     Checkbox
                   </p>
                   <button
                     className={`flex items-center gap-3 text-sm ${ui.strong}`}
                     onClick={() => setCheckbox((current) => !current)}
-                    type='button'
+                    type="button"
                   >
                     <span
                       className={`flex h-6 w-6 items-center justify-center rounded-[5px] border ${checkbox ? 'border-[#9DCC1F] bg-[#7DA513]' : `${ui.checkBorder} bg-transparent`}`}
@@ -406,60 +374,48 @@ export default function ComponentsPageContent() {
                     </span>
                     Checked state
                   </button>
-                  <div
-                    className={`flex items-center gap-3 text-sm ${ui.muted}`}
-                  >
-                    <span
-                      className={`h-6 w-6 rounded-[5px] border ${ui.checkBorder}`}
-                    />
+                  <div className={`flex items-center gap-3 text-sm ${ui.muted}`}>
+                    <span className={`h-6 w-6 rounded-[5px] border ${ui.checkBorder}`} />
                     Unchecked state
                   </div>
                 </div>
 
-                <div className='space-y-4'>
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                  >
+                <div className="space-y-4">
+                  <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                     Radio
                   </p>
                   <button
                     className={`flex items-center gap-3 text-sm ${ui.strong}`}
                     onClick={() =>
-                      setRadio((current) =>
-                        current === 'selected' ? 'unselected' : 'selected',
-                      )
+                      setRadio((current) => (current === 'selected' ? 'unselected' : 'selected'))
                     }
-                    type='button'
+                    type="button"
                   >
                     <span
                       className={`flex h-6 w-6 items-center justify-center rounded-full border ${radio === 'selected' ? 'border-[#9DCC1F] bg-[#7DA513]' : ui.checkBorder}`}
                     >
                       {radio === 'selected' ? (
-                        <span className='h-2.5 w-2.5 rounded-full bg-[#F7F3E8]' />
+                        <span className="h-2.5 w-2.5 rounded-full bg-[#F7F3E8]" />
                       ) : null}
                     </span>
                     Selected
                   </button>
-                  <div
-                    className={`flex items-center gap-3 text-sm ${ui.muted}`}
-                  >
-                    <span
-                      className={`h-6 w-6 rounded-full border ${ui.checkBorder}`}
-                    />
+                  <div className={`flex items-center gap-3 text-sm ${ui.muted}`}>
+                    <span className={`h-6 w-6 rounded-full border ${ui.checkBorder}`} />
                     Unselected
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='space-y-8'>
-              <label className='block space-y-4'>
+            <div className="space-y-8">
+              <label className="block space-y-4">
                 <span
                   className={`block text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
                 >
                   Select / Dropdown
                 </span>
-                <span className='relative block'>
+                <span className="relative block">
                   <select
                     className={`field-focus h-14 w-full appearance-none rounded-[12px] border px-5 text-sm ${ui.neutralControl}`}
                   >
@@ -474,10 +430,8 @@ export default function ComponentsPageContent() {
                 </span>
               </label>
 
-              <div className='space-y-4'>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+              <div className="space-y-4">
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Segmented Control
                 </p>
                 <div
@@ -488,7 +442,7 @@ export default function ComponentsPageContent() {
                       className={`border-r px-3 text-sm transition last:border-r-0 ${isDark ? 'border-white/10' : 'border-[#D8D2C4]'} ${segmented === option ? 'bg-[linear-gradient(135deg,#8AB917,#4B690A)] text-[#F8F5EC]' : ui.label}`}
                       key={option}
                       onClick={() => setSegmented(option)}
-                      type='button'
+                      type="button"
                     >
                       {option}
                     </button>
@@ -499,27 +453,19 @@ export default function ComponentsPageContent() {
           </div>
         </SectionShell>
 
-        <SectionShell index='03' title='Cards' theme={theme}>
-          <div className='grid gap-6 px-6 pb-8 pt-6 md:grid-cols-3 sm:px-8'>
+        <SectionShell index="03" title="Cards" theme={theme}>
+          <div className="grid gap-6 px-6 pb-8 pt-6 md:grid-cols-3 sm:px-8">
             <article
               className={`rounded-[16px] border p-6 transition-colors duration-500 ${ui.panel}`}
             >
-              <div className='flex items-start justify-between'>
-                <p
-                  className={`text-sm ${isDark ? 'text-[#E1DBCF]' : 'text-[#42503E]'}`}
-                >
+              <div className="flex items-start justify-between">
+                <p className={`text-sm ${isDark ? 'text-[#E1DBCF]' : 'text-[#42503E]'}`}>
                   Photosynthesis Rate
                 </p>
-                <PlantMark className='h-16 w-16 rounded-full [&_svg]:h-7 [&_svg]:w-7' />
+                <PlantMark className="h-16 w-16 rounded-full [&_svg]:h-7 [&_svg]:w-7" />
               </div>
-              <p
-                className={`mt-4 font-display text-6xl leading-none ${ui.heading}`}
-              >
-                98.7%
-              </p>
-              <p
-                className={`mt-8 text-sm ${isDark ? 'text-[#9DCC1F]' : 'text-[#6FA009]'}`}
-              >
+              <p className={`mt-4 font-display text-6xl leading-none ${ui.heading}`}>98.7%</p>
+              <p className={`mt-8 text-sm ${isDark ? 'text-[#9DCC1F]' : 'text-[#6FA009]'}`}>
                 + 12.4% <span className={ui.quiet}>vs last 7 days</span>
               </p>
             </article>
@@ -527,27 +473,23 @@ export default function ComponentsPageContent() {
             <article
               className={`rounded-[16px] border p-6 transition-colors duration-500 ${ui.panel}`}
             >
-              <div className='max-w-[15rem]'>
-                <p className='font-mono text-xs uppercase tracking-[0.18em] text-[#9DCC1F]'>
+              <div className="max-w-[15rem]">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#9DCC1F]">
                   Module
                 </p>
-                <h3
-                  className={`mt-4 font-display text-3xl leading-tight ${ui.heading}`}
-                >
+                <h3 className={`mt-4 font-display text-3xl leading-tight ${ui.heading}`}>
                   Growth Optimizer
                 </h3>
                 <p className={`mt-3 text-sm leading-6 ${ui.muted}`}>
                   Optimizes light, humidity, and nutrient balance.
                 </p>
               </div>
-              <div
-                className={`mt-10 flex items-center gap-5 text-xs ${ui.quiet}`}
-              >
+              <div className={`mt-10 flex items-center gap-5 text-xs ${ui.quiet}`}>
                 <span>v1.2.0</span>
                 <span>12 Protocols</span>
                 <button
                   className={`ml-auto flex h-9 w-9 items-center justify-center rounded-[10px] border ${isDark ? 'border-white/18' : 'border-[#C9C2B4]'}`}
-                  type='button'
+                  type="button"
                 >
                   <ArrowUpRight size={16} />
                 </button>
@@ -557,39 +499,33 @@ export default function ComponentsPageContent() {
             <article
               className={`rounded-[16px] border p-6 transition-colors duration-500 ${ui.panel}`}
             >
-              <div className='flex items-start justify-between'>
+              <div className="flex items-start justify-between">
                 <p
                   className={`flex items-center gap-3 text-sm ${isDark ? 'text-[#E1DBCF]' : 'text-[#42503E]'}`}
                 >
-                  <span className='h-3 w-3 rounded-full bg-[#9DCC1F]' />
+                  <span className="h-3 w-3 rounded-full bg-[#9DCC1F]" />
                   System Status
                 </p>
-                <span className='flex h-16 w-16 items-center justify-center rounded-full border border-[#9DCC1F]/60 bg-[#9DCC1F]/5 text-[#9DCC1F] shadow-[0_0_28px_rgba(157,204,31,0.16)]'>
+                <span className="flex h-16 w-16 items-center justify-center rounded-full border border-[#9DCC1F]/60 bg-[#9DCC1F]/5 text-[#9DCC1F] shadow-[0_0_28px_rgba(157,204,31,0.16)]">
                   <Activity size={26} />
                 </span>
               </div>
-              <h3 className={`mt-6 font-display text-4xl ${ui.heading}`}>
-                Optimal
-              </h3>
-              <p className={`mt-5 text-sm ${ui.label}`}>
-                All systems operational
-              </p>
+              <h3 className={`mt-6 font-display text-4xl ${ui.heading}`}>Optimal</h3>
+              <p className={`mt-5 text-sm ${ui.label}`}>All systems operational</p>
               <p className={`mt-2 text-sm ${ui.quiet}`}>Last checked 2m ago</p>
             </article>
           </div>
         </SectionShell>
 
-        <div className='grid gap-5 lg:grid-cols-2'>
-          <SectionShell index='04' title='Iconography' theme={theme}>
-            <div className='space-y-8 px-6 pb-8 pt-6 sm:px-8'>
+        <div className="grid gap-5 lg:grid-cols-2">
+          <SectionShell index="04" title="Iconography" theme={theme}>
+            <div className="space-y-8 px-6 pb-8 pt-6 sm:px-8">
               <div>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Brand Icon Weight
                 </p>
-                <div className='mt-5 flex flex-wrap gap-9'>
-                  <PlantMark className='h-16 w-16 rounded-[18px] [&_svg]:h-8 [&_svg]:w-8' />
+                <div className="mt-5 flex flex-wrap gap-9">
+                  <PlantMark className="h-16 w-16 rounded-[18px] [&_svg]:h-8 [&_svg]:w-8" />
                   {brandIcons.map(({ label, Icon }) => (
                     <span
                       className={`flex h-16 w-16 items-center justify-center rounded-[18px] border ${ui.iconBox}`}
@@ -601,9 +537,7 @@ export default function ComponentsPageContent() {
                 </div>
               </div>
               <div className={`border-t pt-7 ${ui.divider}`}>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Utility Icon Weight
                 </p>
                 <div
@@ -617,20 +551,15 @@ export default function ComponentsPageContent() {
             </div>
           </SectionShell>
 
-          <SectionShell index='05' title='Tokens' theme={theme}>
-            <div className='grid gap-9 px-6 pb-8 pt-6 sm:px-8 md:grid-cols-2'>
+          <SectionShell index="05" title="Tokens" theme={theme}>
+            <div className="grid gap-9 px-6 pb-8 pt-6 sm:px-8 md:grid-cols-2">
               <div>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Radius Scale
                 </p>
-                <div className='mt-6 flex items-end gap-5'>
+                <div className="mt-6 flex items-end gap-5">
                   {[8, 16, 24].map((radius) => (
-                    <div
-                      className={`space-y-3 text-center text-sm ${ui.label}`}
-                      key={radius}
-                    >
+                    <div className={`space-y-3 text-center text-sm ${ui.label}`} key={radius}>
                       <div
                         className={`border border-[#9DCC1F]/70 ${ui.radiusBox}`}
                         style={{
@@ -646,19 +575,14 @@ export default function ComponentsPageContent() {
               </div>
 
               <div>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Spacing Scale (8pt Grid)
                 </p>
-                <div className='mt-6 flex h-20 items-end gap-4'>
+                <div className="mt-6 flex h-20 items-end gap-4">
                   {spacingTokens.map((token, index) => (
-                    <div
-                      className={`space-y-3 text-center text-sm ${ui.label}`}
-                      key={token}
-                    >
+                    <div className={`space-y-3 text-center text-sm ${ui.label}`} key={token}>
                       <div
-                        className='rounded-[5px] bg-[#9DCC1F]'
+                        className="rounded-[5px] bg-[#9DCC1F]"
                         style={{
                           height: 18 + index * 6,
                           opacity: 0.16 + index * 0.12,
@@ -671,21 +595,14 @@ export default function ComponentsPageContent() {
                 </div>
               </div>
 
-              <div className='md:col-span-2'>
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}
-                >
+              <div className="md:col-span-2">
+                <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${ui.label}`}>
                   Stroke Weight
                 </p>
-                <div
-                  className={`mt-7 grid grid-cols-3 gap-8 text-center text-sm ${ui.label}`}
-                >
+                <div className={`mt-7 grid grid-cols-3 gap-8 text-center text-sm ${ui.label}`}>
                   {[1, 1.5, 2].map((weight) => (
-                    <div className='space-y-4' key={weight}>
-                      <div
-                        className={`h-px ${ui.stroke}`}
-                        style={{ height: weight }}
-                      />
+                    <div className="space-y-4" key={weight}>
+                      <div className={`h-px ${ui.stroke}`} style={{ height: weight }} />
                       <p>{weight}px</p>
                     </div>
                   ))}
@@ -696,96 +613,66 @@ export default function ComponentsPageContent() {
         </div>
 
         <SectionShell
-          className='border-0 bg-transparent shadow-none'
-          index='06'
+          className="border-0 bg-transparent shadow-none"
+          index="06"
           theme={theme}
-          title='Typography'
+          title="Typography"
         >
-          <div className='overflow-x-auto px-6 pb-8 pt-6 sm:px-8'>
-            <div className='grid min-w-[780px] grid-cols-[180px_minmax(280px,1fr)_220px] items-center gap-x-5 gap-y-4'>
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}
-              >
+          <div className="overflow-x-auto px-6 pb-8 pt-6 sm:px-8">
+            <div className="grid min-w-[780px] grid-cols-[180px_minmax(280px,1fr)_220px] items-center gap-x-5 gap-y-4">
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}>
                 Display Heading
               </p>
-              <h3
-                className={`font-display text-5xl leading-none sm:text-6xl ${ui.heading}`}
-              >
+              <h3 className={`font-display text-5xl leading-none sm:text-6xl ${ui.heading}`}>
                 Engineering life.
               </h3>
               <p className={`text-sm leading-5 ${ui.label}`}>
-                <span
-                  className={`block uppercase tracking-[0.12em] ${ui.strong}`}
-                >
+                <span className={`block uppercase tracking-[0.12em] ${ui.strong}`}>
                   Cormorant Garamond
                 </span>
                 Bold / -1%
               </p>
 
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}
-              >
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}>
                 Section Heading
               </p>
-              <h4
-                className={`font-display text-3xl leading-tight ${ui.strong}`}
-              >
+              <h4 className={`font-display text-3xl leading-tight ${ui.strong}`}>
                 Section heading example
               </h4>
               <p className={`text-sm leading-5 ${ui.label}`}>
-                <span
-                  className={`block uppercase tracking-[0.12em] ${ui.strong}`}
-                >
+                <span className={`block uppercase tracking-[0.12em] ${ui.strong}`}>
                   Cormorant Garamond
                 </span>
                 Bold / 0%
               </p>
 
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}
-              >
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}>
                 Body Text
               </p>
               <p className={`max-w-md text-base leading-7 ${ui.muted}`}>
-                MiaSys unites botanical intelligence, automation, and ecological
-                insight in a living system that grows with you.
+                MiaSys unites botanical intelligence, automation, and ecological insight in a living
+                system that grows with you.
               </p>
               <p className={`text-sm leading-5 ${ui.label}`}>
-                <span
-                  className={`block uppercase tracking-[0.12em] ${ui.strong}`}
-                >
-                  Manrope
-                </span>
+                <span className={`block uppercase tracking-[0.12em] ${ui.strong}`}>Manrope</span>
                 Regular / 0%
               </p>
 
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}
-              >
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}>
                 Label
               </p>
               <p className={`text-sm font-semibold ${ui.strong}`}>Label Text</p>
               <p className={`text-sm leading-5 ${ui.label}`}>
-                <span
-                  className={`block uppercase tracking-[0.12em] ${ui.strong}`}
-                >
-                  Manrope
-                </span>
+                <span className={`block uppercase tracking-[0.12em] ${ui.strong}`}>Manrope</span>
                 Medium / +2%
               </p>
 
-              <p
-                className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}
-              >
+              <p className={`text-sm font-semibold uppercase tracking-[0.12em] ${ui.label}`}>
                 Micro Text
               </p>
               <p className={`text-xs ${ui.muted}`}>Micro text example</p>
               <p className={`text-sm leading-5 ${ui.label}`}>
-                <span
-                  className={`block uppercase tracking-[0.12em] ${ui.strong}`}
-                >
-                  Manrope
-                </span>
+                <span className={`block uppercase tracking-[0.12em] ${ui.strong}`}>Manrope</span>
                 Regular / +4%
               </p>
             </div>
